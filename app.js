@@ -3,9 +3,10 @@ var bodyParser = require('body-parser');
 
 var app = express();
 var router = require('./routes');
+global._ = require('underscore');
 
 app.use(function(req, res, next) {
-	var oneof = false;	
+	var oneof = false;
     if(req.headers.origin) {
         res.header('Access-Control-Allow-Origin', req.headers.origin);
         oneof = true;
