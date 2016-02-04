@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var router = require('./routes');
 global._ = require('underscore');
+global.GlobalConfig = require('./configs/connections.json');
 
 app.use(function(req, res, next) {
 	var oneof = false;
@@ -31,6 +32,6 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 //Set routers
 app.use('/', router);
 
-app.listen(3000, function () {
-  console.log('Puerto '+3000);
+app.listen(GlobalConfig.port, function () {
+  console.log('Puerto '+GlobalConfig.port);
 });

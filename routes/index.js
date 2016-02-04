@@ -15,6 +15,6 @@ router.get('/requestToken', twitterRoute.requestToken);
 
 router.get('/userTweets', twitterRoute.userTweets);
 
-router.post('/ibmTest', ibmRoute.ibmTest);
+router.get('/twitter',twitterRoute.analyze);
 
 module.exports = router;
