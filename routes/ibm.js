@@ -1,5 +1,6 @@
 var AlchemyAPI = require('../alchemyapi.js');
 var alchemyapi = new AlchemyAPI();
+var ibmController = require('../controllers/ibm');
 
 // exports.ibmTest = function(req, res, next) {
 //     var demo_text = req.body.text;
@@ -18,3 +19,10 @@ var alchemyapi = new AlchemyAPI();
 //         });
 //     });
 // };
+
+exports.test = function(req, res, next) {
+    ibmController.test(function(resp){
+        res.send(resp);
+        next();
+    });
+};
