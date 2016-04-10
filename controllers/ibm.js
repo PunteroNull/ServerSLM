@@ -12,7 +12,6 @@ exports.analyzeText = function(text,cb) {
     alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
         var tax = response;
         alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
-            // cb({"taxonomy":tax,"keywords":response})
             processData({"taxonomy":tax,"keywords":response},cb);
         });
     });
@@ -22,14 +21,35 @@ exports.test = function(cb) {
     processData({"taxonomy":testData.taxonomy,"keywords":testData.keywords},cb);
 };
 
+exports.feedback = function(cb) {
+    //Toma 5 palabras clave, 3 categorias y la nota
+    //A cada categoria agrega las claves
+    //Las nuevas le pone 1
+    //Las viejas le suma o resta score
+    //Como mucho son 15 actualizaciones
+    return cb({});
+}
+
 function processData(data,cb){
+    // console.log(data);
     processTaxonomy(data.taxonomy,function(respTax){
         processKeywords(data.keywords,function(respKey){
             finalProcess(respTax,respKey,function(finalResp){
-                cb(finalResp);
+                var resp = {
+                    "finalResp":finalResp,
+                    "respTaxonomy":respTax,
+                    "respKeywords":respKey
+                }
+                if(data.keywords && data.keywords.keywords && !_.isEmpty(data.keywords.keywords))
+                    resp.keywords = data.keywords.keywords;
+                cb(resp);
             });
         })
     })
+}
+
+function cleanKeyword(keyword){
+    return keyword.replace("RT", "").toLowerCase().trim();
 }
 
 function processTaxonomy(taxData,cb){
@@ -76,7 +96,16 @@ function sortTier(Tier){
 
 function processKeywords(keyData,cb){
     if(keyData.status == "OK"){
-        var filteredWords = _.pluck(_.filter(keyData.keywords, function(keyword){return keyword.relevance >= 0.4; }), 'text');
+        var filteredWords = _.pluck(_.filter(keyData.keywords, function(keyword){
+            if(keyword.relevance >= 0.4){
+                keyword.text = cleanKeyword(keyword.text)
+                if(keyword.text && !_.isEmpty(keyword.text))
+                    return true;
+                else
+                    return false;
+            } else
+                return false;
+        }), 'text');
         searchWords(filteredWords,function(results){
             cb(results);
         })
@@ -125,17 +154,19 @@ function searchWords(filteredWords,cb){
 
 function findWord(cb){
     var word = arrayWords.shift();
-    var collection = dbMongo.collection('keywords');
-    collection.find({'word': {'$in': [word]}}).toArray(function(err, docs) {
+    var collection = dbMongo.collection('newkeywords');
+    collection.find({'word': {$elemMatch:{name: word}}}).toArray(function(err, docs) {
         if(err)
             return cb(null,null);
         var aux;
+        var foundedWord;
         docs.forEach(function(foundedDoc){
             aux = _.findIndex(arrayFinds,{"cat":foundedDoc.category})
+            foundedWord = _.find(foundedDoc.word, function(w){ return w.name == word; })
             if(aux != -1){
-                arrayFinds[aux].amount += 1;
+                arrayFinds[aux].amount += foundedWord.score;
             } else {
-                arrayFinds.push({"cat":foundedDoc.category,"amount":1});
+                arrayFinds.push({"cat":foundedDoc.category,"amount":foundedWord.score});
             }
         });
         cb(null,docs);
@@ -193,15 +224,15 @@ var testData = {
       },
       {
         "relevance": "0.417086",
-        "text": "RT"
+        "text": "basquet"
       },
       {
         "relevance": "0.407592",
-        "text": "Shantae Risky"
+        "text": "futbol"
       },
       {
         "relevance": "0.404697",
-        "text": "Mighty Switch Force"
+        "text": "taekwondo"
       },
       {
         "relevance": "0.387099",
