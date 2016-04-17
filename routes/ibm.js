@@ -10,7 +10,7 @@ exports.test = function(req, res, next) {
 };
 
 exports.feedback = function(req, res, next) {
-    ibmController.feedback(function(resp){
+    ibmController.feedback(req.body,function(resp){
         res.send(resp);
         next();
     });

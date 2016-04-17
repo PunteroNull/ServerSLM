@@ -7,6 +7,6 @@ router.get('/twitter',twitterRoute.analyze);
 
 router.get('/testProccess', ibmRoute.test);
 
-router.get('/feedback', ibmRoute.feedback);
+router.post('/feedback', ibmRoute.feedback);
 
 module.exports = router;

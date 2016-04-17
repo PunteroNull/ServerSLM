@@ -21,13 +21,35 @@ exports.test = function(cb) {
     processData({"taxonomy":testData.taxonomy,"keywords":testData.keywords},cb);
 };
 
-exports.feedback = function(cb) {
+exports.feedback = function(input,callback) {
+    var categories = input.categories;
+    var keywords = input.keywords
+    var note = input.note;
+    MongoClient.connect(url, function(err, db) {
+        var collection = db.collection('newkeywords');
+        dbMongo = db;
+        function prepareCategories(category,cb){
+            findAndEditCategories(collection,category,keywords,cb)
+        }
+        async.map(categories,prepareCategories,function(err, results){
+            db.close();
+            return callback(results);
+        })
+    });
     //Toma 5 palabras clave, 3 categorias y la nota
     //A cada categoria agrega las claves
     //Las nuevas le pone 1
     //Las viejas le suma o resta score
     //Como mucho son 15 actualizaciones
-    return cb({});
+}
+
+function findAndEditCategories(collection,category,keywords,cb){
+    collection.find({'category': { $eq: category }}).toArray(function(err, docs) {
+        console.log(docs);
+        if(err)
+            return cb(err);
+        return cb(null,docs);
+    });
 }
 
 function processData(data,cb){
@@ -63,7 +85,7 @@ function processTaxonomy(taxData,cb){
         }
         var separatedLabels;
         taxData.taxonomy.forEach(function(result){
-            if(result.score >= 0.4){
+            if(result.score >= GlobalConfig.minScoreTaxonomy){
                 separatedLabels = result.label.split("/");
                 for (var i = 1; i < separatedLabels.length; i++) {
                     tierCollection[i].push({"label":separatedLabels[i],"score":result.score});
@@ -97,7 +119,7 @@ function sortTier(Tier){
 function processKeywords(keyData,cb){
     if(keyData.status == "OK"){
         var filteredWords = _.pluck(_.filter(keyData.keywords, function(keyword){
-            if(keyword.relevance >= 0.4){
+            if(keyword.relevance >= GlobalConfig.minScoreKeywords){
                 keyword.text = cleanKeyword(keyword.text)
                 if(keyword.text && !_.isEmpty(keyword.text))
                     return true;
@@ -132,7 +154,7 @@ function searchWords(filteredWords,cb){
     var arrayFunc = [];
     arrayWords = filteredWords;
     MongoClient.connect(url, function(err, db) {
-        var collection = db.collection('keywords');
+        var collection = db.collection('newkeywords');
         dbMongo = db;
         filteredWords.forEach(function(word){
             arrayFunc.push(findWord);
