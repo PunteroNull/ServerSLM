@@ -12,6 +12,8 @@ exports.analyzeText = function(text,cb) {
     alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
         var tax = response;
         alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
+            console.log(tax);
+            console.log(response);
             processData({"taxonomy":tax,"keywords":response},cb);
         });
     });
@@ -29,7 +31,7 @@ exports.feedback = function(input,callback) {
         var collection = db.collection('newkeywords');
         dbMongo = db;
         function prepareCategories(category,cb){
-            findAndEditCategories(collection,category,keywords,cb)
+            findAndEditCategories(collection,category,keywords,note,cb)
         }
         async.map(categories,prepareCategories,function(err, results){
             db.close();
@@ -43,12 +45,40 @@ exports.feedback = function(input,callback) {
     //Como mucho son 15 actualizaciones
 }
 
-function findAndEditCategories(collection,category,keywords,cb){
+function findAndEditCategories(collection,category,keywords,note,cb){
     collection.find({'category': { $eq: category }}).toArray(function(err, docs) {
-        console.log(docs);
         if(err)
             return cb(err);
-        return cb(null,docs);
+        if(_.isEmpty(docs[0])){
+            var aux = {
+                "category" : category,
+                "word" : []
+            }
+            keywords.forEach(function(word){
+                aux.word.push({"name":word,"score":1})
+            })
+            collection.insert(aux,function(err, docs) {
+                if(err)
+                    return cb(err);
+                return cb(null,docs);
+            })
+        } else {
+            var wordsAux = docs[0].word;
+            var index;
+            keywords.forEach(function(word){
+                index = _.findIndex(wordsAux, function(wordDB){ return wordDB.name == word});
+                if(index != -1){
+                    wordsAux[index].score = wordsAux[index].score + GlobalConfig.scoreKeywords[note];
+                } else {
+                    wordsAux.push({"name":word,"score":1})
+                }
+            })
+            collection.update({_id:docs[0]["_id"]}, {$set:{word:wordsAux}},function(err, docs) {
+                if(err)
+                    return cb(err);
+                return cb(null,docs);
+            })
+        }
     });
 }
 
@@ -162,7 +192,7 @@ function searchWords(filteredWords,cb){
         async.series(arrayFunc,function(err, results){
             db.close();
             if(err || !results || !results[0])
-                cb([]);
+                return cb([]);
             var sortedCats = _.sortBy(arrayFinds, 'amount');
             var finalResults = [];
             for (var i = 0; i < 3; i++) {
