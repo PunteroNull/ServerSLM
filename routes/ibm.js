@@ -15,3 +15,10 @@ exports.feedback = function(req, res, next) {
         next();
     });
 };
+
+exports.getResult = function(req, res, next) {
+    ibmController.getResult(req.query.code,function(resp){
+        res.send(resp);
+        next();
+    });
+};

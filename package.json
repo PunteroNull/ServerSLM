@@ -12,8 +12,9 @@
     "express-ipfilter": "0.0.23",
     "express-myconnection": "1.0.4",
     "fs": "0.0.2",
-    "mysql": "^2.5.5",
     "mongodb": "^2.0",
+    "mysql": "^2.5.5",
+    "nodemailer": "^2.4.2",
     "twitter": "^1.2.5",
     "underscore": "^1.8.2"
   }

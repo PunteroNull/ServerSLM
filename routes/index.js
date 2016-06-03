@@ -9,4 +9,6 @@ router.get('/testProccess', ibmRoute.test);
 
 router.post('/feedback', ibmRoute.feedback);
 
+router.get('/result', ibmRoute.getResult);
+
 module.exports = router;

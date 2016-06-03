@@ -3,24 +3,49 @@ var alchemyapi = new AlchemyAPI();
 var async = require('async');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = 'mongodb://localhost:27017/local';
+var url = 'mongodb://localhost:27017/local'; //Sacarlo a un config
 var arrayFinds = [];
 var arrayWords = [];
 var dbMongo;
 
-exports.analyzeText = function(text,cb) {
+//Mover todo esto de mails a un servicio aparte
+var nodemailer = require('nodemailer');
+
+exports.analyzeText = function(text,cb) { //Analiza texto, luego envia un mail con un codigo y guarda los resultados
+    var code = makeRandomCode();
     alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
         var tax = response;
         alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
-            console.log(tax);
-            console.log(response);
-            processData({"taxonomy":tax,"keywords":response},cb);
+            // console.log(tax);
+            // console.log(response);
+            processData({"taxonomy":tax,"keywords":response},function(result){
+                sendCode(code);
+                saveResult(result, code);
+            });
         });
     });
+    cb({"Status":"Te vamos a mandar un mail con el codigo"});  //Front-end muestra pagina para avisarle al usuario
 };
 
-exports.test = function(cb) {
+exports.test = function(cb) { //Para usar el dato de prueba y no usar alchemy
     processData({"taxonomy":testData.taxonomy,"keywords":testData.keywords},cb);
+};
+
+exports.getResult = function(code,cb) { //Para traer los resultados
+    MongoClient.connect(url, function(err, db) {
+        if(err)
+            return cb(err);
+        var collection = db.collection('results');
+        dbMongo = db;
+        collection.find({'code': { $eq: code }}).toArray(function(err, docs) {
+            db.close();
+            if(err)
+                return cb(err);
+            if(!docs[0] || !docs[0].result)
+                return cb({})
+            return cb(docs[0].result);
+        });
+    });
 };
 
 exports.feedback = function(input,callback) {
@@ -38,11 +63,44 @@ exports.feedback = function(input,callback) {
             return callback(results);
         })
     });
-    //Toma 5 palabras clave, 3 categorias y la nota
-    //A cada categoria agrega las claves
-    //Las nuevas le pone 1
-    //Las viejas le suma o resta score
-    //Como mucho son 15 actualizaciones
+}
+
+function sendCode(code){
+    var transporter = nodemailer.createTransport('smtps://malcolmtec%40gmail.com:rhderboerawmmnwa@smtp.gmail.com');
+
+    var mailOptions = {
+        from: '"Mr.Tesis 👥" <malcolmtec@gmail.com>',
+        to: 'malcolmtec@gmail.com',
+        subject: 'Resultado ✔'
+    };
+
+    mailOptions.text = "Tu codigo es "+code;
+    mailOptions.html = "<b>Tu codigo es "+code;+"</b>";
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error);
+        }
+        console.log('Mail enviado');
+    });
+}
+
+function saveResult(result, code){
+    MongoClient.connect(url, function(err, db) {
+        var collection = db.collection('results');
+        dbMongo = db;
+        var aux = {
+            "code":code,
+            "result":result
+        }
+        collection.insert(aux,function(err, docs) {
+            if(err)
+                console.log(err);
+            else
+                console.log("Resultados Guardados");
+            db.close();
+            return;
+        })
+    });
 }
 
 function findAndEditCategories(collection,category,keywords,note,cb){
@@ -225,6 +283,14 @@ function findWord(cb){
     });
 }
 
+function makeRandomCode() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+}
+
 var testData = {
   "taxonomy": {
     "status": "OK",
@@ -365,86 +431,6 @@ var testData = {
       {
         "relevance": "0.293028",
         "text": "Revenge DC eShop"
-      },
-      {
-        "relevance": "0.292712",
-        "text": "Nintendo sales"
-      },
-      {
-        "relevance": "0.292338",
-        "text": "Shantae Half-Genie Hero"
-      },
-      {
-        "relevance": "0.288177",
-        "text": "lovely Lego Shantae"
-      },
-      {
-        "relevance": "0.287966",
-        "text": "New Year Sale"
-      },
-      {
-        "relevance": "0.287264",
-        "text": "publisher"
-      },
-      {
-        "relevance": "0.286254",
-        "text": "Revenge Director"
-      },
-      {
-        "relevance": "0.285583",
-        "text": "game support issues"
-      },
-      {
-        "relevance": "0.282935",
-        "text": "specific release date"
-      },
-      {
-        "relevance": "0.282188",
-        "text": "specific date"
-      },
-      {
-        "relevance": "0.281792",
-        "text": "ports"
-      },
-      {
-        "relevance": "0.281391",
-        "text": "TBA"
-      },
-      {
-        "relevance": "0.280573",
-        "text": "fan art"
-      },
-      {
-        "relevance": "0.279128",
-        "text": "Shantae game"
-      },
-      {
-        "relevance": "0.278639",
-        "text": "backer tier reward"
-      },
-      {
-        "relevance": "0.277828",
-        "text": "current estimated date"
-      },
-      {
-        "relevance": "0.277267",
-        "text": "Backer exclusive items"
-      },
-      {
-        "relevance": "0.277214",
-        "text": "RT  Oh"
-      },
-      {
-        "relevance": "0.277098",
-        "text": "little fan art"
-      },
-      {
-        "relevance": "0.275948",
-        "text": "Lunar New"
-      },
-      {
-        "relevance": "0.275491",
-        "text": "lovely little Half-Genie"
       }
     ]
   }

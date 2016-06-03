@@ -25,12 +25,9 @@ app.use(function(req, res, next) {
         next();
 });
 
-
-//Set bodyParser middleware
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
-//Set routers
 app.use('/', router);
 
 app.listen(GlobalConfigConnections.port, function () {
