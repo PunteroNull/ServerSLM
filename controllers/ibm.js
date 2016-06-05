@@ -1,5 +1,4 @@
 var AlchemyAPI = require('../alchemyapi.js');
-var alchemyapi = new AlchemyAPI();
 var async = require('async');
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -7,25 +6,56 @@ var url = 'mongodb://localhost:27017/local'; //Sacarlo a un config
 var arrayFinds = [];
 var arrayWords = [];
 var dbMongo;
-
-//Mover todo esto de mails a un servicio aparte
-var nodemailer = require('nodemailer');
+var emailSender = require('../helpers/emailSender');
 
 exports.analyzeText = function(text,cb) { //Analiza texto, luego envia un mail con un codigo y guarda los resultados
     var code = makeRandomCode();
+    var alchemyapi = new AlchemyAPI();
     alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
         var tax = response;
         alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
-            // console.log(tax);
-            // console.log(response);
             processData({"taxonomy":tax,"keywords":response},function(result){
                 sendCode(code);
                 saveResult(result, code);
             });
         });
     });
-    cb({"Status":"Te vamos a mandar un mail con el codigo"});  //Front-end muestra pagina para avisarle al usuario
 };
+
+exports.analyzeMultipleText = function(textUser,textsFriends,cb) { //Analiza el texto del usuario y de los usuarios que sigue, luego envia un mail con un codigo y guarda los resultados (Incompleto)
+    var code = makeRandomCode();
+    alchemyProccessText(textUser,function(err,processedUser){
+        async.mapSeries(textsFriends, alchemyProccessText, function(err, processedFriends){
+            if(err)
+                return console.log(err);
+            else
+                processMultipleData(processedUser, processedFriends, function(result){
+                    sendCode(code);
+                    saveResult(result, code);
+                });
+        })
+    })
+};
+
+function alchemyProccessText (text,cb){
+    var alchemyapi = new AlchemyAPI();
+    alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
+        var tax = response;
+        // console.log(response);
+        // if(response.status == "ERROR")
+        //     console.log("FALLO TAX");
+        // else
+        //     console.log("LOGRO TAX");
+        alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
+            // console.log(response);
+            // if(response.status == "ERROR")
+            //     console.log("FALLO KEY");
+            // else
+            //     console.log("LOGRO KEY");
+            cb(null,{"taxonomy":tax,"keywords":response});
+        });
+    });
+}
 
 exports.test = function(cb) { //Para usar el dato de prueba y no usar alchemy
     processData({"taxonomy":testData.taxonomy,"keywords":testData.keywords},cb);
@@ -66,22 +96,19 @@ exports.feedback = function(input,callback) {
 }
 
 function sendCode(code){
-    var transporter = nodemailer.createTransport('smtps://malcolmtec%40gmail.com:rhderboerawmmnwa@smtp.gmail.com');
-
-    var mailOptions = {
+    var content = {
         from: '"Mr.Tesis 👥" <malcolmtec@gmail.com>',
         to: 'malcolmtec@gmail.com',
-        subject: 'Resultado ✔'
+        subject: 'Resultado ✔',
+        text: "Tu codigo es "+code,
+        html: "<b>Tu codigo es "+code+"</b>"
     };
-
-    mailOptions.text = "Tu codigo es "+code;
-    mailOptions.html = "<b>Tu codigo es "+code;+"</b>";
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            console.log(error);
-        }
-        console.log('Mail enviado');
-    });
+    emailSender.emailSend(content,function(err, resp){
+        if(err)
+            console.log(err);
+        else
+            console.log('Mail enviado');
+    })
 }
 
 function saveResult(result, code){
@@ -153,6 +180,31 @@ function processData(data,cb){
                 if(data.keywords && data.keywords.keywords && !_.isEmpty(data.keywords.keywords))
                     resp.keywords = data.keywords.keywords;
                 cb(resp);
+            });
+        })
+    })
+}
+
+function processMultipleData(processedUser, processedFriends ,cb){
+    processTaxonomy(processedUser.taxonomy,function(respTaxUser){
+        processKeywords(processedUser.keywords,function(respKeyUser){
+            finalProcess(respTaxUser,respKeyUser,function(finalRespUser){
+                var taxonomyArray = _.pluck(processedFriends, 'taxonomy');
+                var keywordsArray = _.pluck(processedFriends, 'keywords');
+                // console.log("USER");
+                // console.log(finalRespUser);
+                async.map(taxonomyArray,processTaxonomy,function(respTaxFriends){
+                    async.map(taxonomyArray,processKeywords,function(respTaxFriends){
+                        // console.log("FRIENDS");
+                        // console.log(respTaxFriends);
+                        // console.log(respTaxFriends);
+
+                        // Procesar las cosas con un nuevo finalProcess
+                        // Hay que hacer es mergear los resultados de los amigos y agregarlos a los resultados del usuario (Toman prioridad)
+                        cb(respKeyUser);
+                    })
+                })
+
             });
         })
     })
