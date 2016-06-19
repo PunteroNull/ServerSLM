@@ -41,18 +41,14 @@ function alchemyProccessText (text,cb){
     var alchemyapi = new AlchemyAPI();
     alchemyapi.taxonomy('text', text,{ 'sentiment':0 }, function(response) {
         var tax = response;
-        // console.log(response);
-        // if(response.status == "ERROR")
-        //     console.log("FALLO TAX");
-        // else
-        //     console.log("LOGRO TAX");
+        if(response.status == "ERROR")
+            console.log("FALLO TAX");
         alchemyapi.keywords('text', text,{ 'sentiment':0,"keywordExtractMode":"strict","outputMode":"json","maxRetrieve":20 }, function(response) {
-            // console.log(response);
-            // if(response.status == "ERROR")
-            //     console.log("FALLO KEY");
-            // else
-            //     console.log("LOGRO KEY");
-            cb(null,{"taxonomy":tax,"keywords":response});
+            if(response.status == "ERROR")
+                console.log("FALLO KEY");
+            setTimeout(function(){
+                cb(null,{"taxonomy":tax,"keywords":response});
+            },2000)
         });
     });
 }
@@ -93,6 +89,10 @@ exports.feedback = function(input,callback) {
             return callback(results);
         })
     });
+}
+
+exports.feedbackByCode = function(input,callback) {
+    //Se puede hacer feedback por el codigo del resultado
 }
 
 function sendCode(code){
@@ -168,7 +168,6 @@ function findAndEditCategories(collection,category,keywords,note,cb){
 }
 
 function processData(data,cb){
-    // console.log(data);
     processTaxonomy(data.taxonomy,function(respTax){
         processKeywords(data.keywords,function(respKey){
             finalProcess(respTax,respKey,function(finalResp){
@@ -191,23 +190,49 @@ function processMultipleData(processedUser, processedFriends ,cb){
             finalProcess(respTaxUser,respKeyUser,function(finalRespUser){
                 var taxonomyArray = _.pluck(processedFriends, 'taxonomy');
                 var keywordsArray = _.pluck(processedFriends, 'keywords');
-                // console.log("USER");
-                // console.log(finalRespUser);
-                async.map(taxonomyArray,processTaxonomy,function(respTaxFriends){
-                    async.map(taxonomyArray,processKeywords,function(respTaxFriends){
-                        // console.log("FRIENDS");
-                        // console.log(respTaxFriends);
-                        // console.log(respTaxFriends);
-
-                        // Procesar las cosas con un nuevo finalProcess
-                        // Hay que hacer es mergear los resultados de los amigos y agregarlos a los resultados del usuario (Toman prioridad)
-                        cb(respKeyUser);
+                async.map(taxonomyArray,processTaxonomyFriend,function(err,respTaxFriends){
+                    async.map(taxonomyArray,processKeywordsFriend,function(err,respKeyFriends){
+                        var result = finalProcessFriends(respTaxFriends,respKeyFriends,finalRespUser);
+                        var keywords = concatKeywordsFriends(processedUser.keywords,keywordsArray);
+                        var resp = {
+                            "finalResp":result,
+                            "keywords":keywords
+                        }
+                        return cb(resp);
                     })
                 })
-
             });
         })
     })
+}
+
+function processTaxonomyFriend(taxData,cb){
+    processTaxonomy(taxData,function(resp){
+        cb(null,resp)
+    });
+}
+
+function processKeywordsFriend(keyData,cb){
+    processKeywords(keyData,function(resp){
+        cb(null,resp)
+    });
+}
+
+function concatKeywordsFriends(keywordsUser,arrayFriends){
+    var keywords = [];
+    keywordsUser.keywords.forEach(function(keyword){
+        var foundKey = keywords.find(function(key){return key == keyword.text})
+        if(!foundKey)
+            keywords.push(keyword.text);
+    })
+    arrayFriends.forEach(function(friendData){
+        friendData.keywords.forEach(function(keyword){
+            var foundKey = keywords.find(function(key){return key == keyword.text})
+            if(!foundKey)
+                keywords.push(keyword.text);
+        })
+    })
+    return keywords;
 }
 
 function cleanKeyword(keyword){
@@ -289,6 +314,40 @@ function finalProcess(taxCats,keyCats,cb){
     cb(_.sortBy(taxCats, 'score').reverse());
 }
 
+function finalProcessFriends(respTaxFriends,respKeyFriends,finalRespUser){
+    var result = [];
+    var taxonomyComplete = [];
+    respTaxFriends.forEach(function(taxArrayFriend){
+        taxArrayFriend.forEach(function(taxFriend){
+            var findTax = taxonomyComplete.find(function(tax){ return tax.cat == taxFriend.cat });
+            if(findTax)
+                findTax.score = findTax.score + taxFriend.score;
+            else
+                taxonomyComplete.push(taxFriend)
+        })
+    })
+    respKeyFriends.forEach(function(keyArrayFriend){
+        keyArrayFriend.forEach(function(keyFriend){
+            var findTax = taxonomyComplete.find(function(tax){ return tax.cat == keyFriend.cat });
+            if(findTax)
+                findTax.score = findTax.score + keyFriend.score;
+            else
+                taxonomyComplete.push(keyFriend)
+        })
+    })
+    finalRespUser.forEach(function(userResult){
+        var findTax = taxonomyComplete.find(function(tax){ return tax.cat == userResult.cat });
+        if(findTax)
+            findTax.score = findTax.score + userResult.score*2;
+        else {
+            userResult.score = userResult.score*2;
+            taxonomyComplete.push(userResult)
+        }
+
+    })
+    return (_.sortBy(taxonomyComplete, 'score').reverse());
+}
+
 function searchWords(filteredWords,cb){
     arrayFinds = [];
     var arrayFunc = [];
@@ -318,8 +377,10 @@ function findWord(cb){
     var word = arrayWords.shift();
     var collection = dbMongo.collection('newkeywords');
     collection.find({'word': {$elemMatch:{name: word}}}).toArray(function(err, docs) {
-        if(err)
+        if(err){
+            console.log(err);
             return cb(null,null);
+        }
         var aux;
         var foundedWord;
         docs.forEach(function(foundedDoc){

@@ -13,7 +13,10 @@ exports.getTweets = function(username,cb){ //Trae los Tweets de un usuario y los
         });
         auxString = auxString.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
         auxString = auxString.replace(/(\r\n|\n|\r|"|\\)/gm,"");
-        auxString = auxString.replace(/(?:@)[\n\S]+/g, '');
+        auxString = auxString.replace('#', '');
+        auxString = auxString.replace('@', '');
+        auxString = auxString.replace('RT ', '');
+        // auxString = auxString.replace(/(?:@)[\n\S]+/g, '');
         cb(null,auxString);
     });
 }
@@ -26,7 +29,7 @@ exports.getFollowersTweets = function(username,cb){ //Trae los tweets de los usu
             return cb(error,null);
         friends.users.sort(sortFriends);
         friends.users.reverse();
-        var arrayFriends = _.pluck(friends.users.slice(0, 9), 'screen_name'); //Ponerlo en un config para poder variar la cantidad
+        var arrayFriends = _.pluck(friends.users.slice(0, 14), 'screen_name'); //Ponerlo en un config para poder variar la cantidad
         console.log(arrayFriends);
         async.map(arrayFriends, that.getTweets, function(err, results){
             if(err)
