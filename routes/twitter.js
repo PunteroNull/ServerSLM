@@ -1,5 +1,6 @@
 var twitterController = require('../controllers/twitter');
 var ibmController = require('../controllers/ibm');
+var cacheController = require('../controllers/cache');
 var Twitter = require('twitter');
 
 exports.analyze = function(req, res, next) {
@@ -42,6 +43,17 @@ exports.analyzeFollowing = function(req, res, next) {
                 next();
             })
         })
+    } else {
+        res.status(500);
+        res.send("Falta el username");
+        next();
+    }
+};
+
+exports.analyzeFollowingCached = function(req, res, next) {
+    if(req.query.name){
+        var username = req.query.name;
+        cacheController.analizeUser(username, function(response){})
     } else {
         res.status(500);
         res.send("Falta el username");

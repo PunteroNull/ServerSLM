@@ -115,9 +115,11 @@ function saveResult(result, code){
     MongoClient.connect(url, function(err, db) {
         var collection = db.collection('results');
         dbMongo = db;
+        var now = new Date();
         var aux = {
             "code":code,
-            "result":result
+            "result":result,
+            "date":now
         }
         collection.insert(aux,function(err, docs) {
             if(err)

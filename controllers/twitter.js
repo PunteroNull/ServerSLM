@@ -13,9 +13,11 @@ exports.getTweets = function(username,cb){ //Trae los Tweets de un usuario y los
         });
         auxString = auxString.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
         auxString = auxString.replace(/(\r\n|\n|\r|"|\\)/gm,"");
-        auxString = auxString.replace('#', '');
-        auxString = auxString.replace('@', '');
-        auxString = auxString.replace('RT ', '');
+        auxString = auxString.replace(/(RT|via)((?:\b\W*@\w+)+)/, '');
+        auxString = auxString.replace(/RT/g, '');
+        auxString = auxString.replace(/#/g, '');
+        auxString = auxString.replace(/@/g, '');
+        auxString = auxString.replace(/YouTube video/g, '');
         // auxString = auxString.replace(/(?:@)[\n\S]+/g, '');
         cb(null,auxString);
     });
