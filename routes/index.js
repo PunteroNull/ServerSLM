@@ -22,4 +22,10 @@ router.get('/result', ibmRoute.getResult);
 //obtiene 5 videos de youtube relacionados a una fase o palabra
 router.get('/youtube', youtubeRoute.busqueda);
 
+//obtiene tweets destacados dado una palabra 
+router.get('/buscarTweets', twitterRoute.buscarTweets);
+
+//obtiene los usuarios de twitter que tienen gustos similares
+router.get('/buscarTwitterUsers', twitterRoute.buscarTwitterUsers);
+
 module.exports = router;

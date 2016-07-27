@@ -3,6 +3,44 @@ var ibmController = require('../controllers/ibm');
 var cacheController = require('../controllers/cache');
 var Twitter = require('twitter');
 
+exports.buscarTwitterUsers = function(req, res, next) {
+    if(req.query.words){
+        var q = req.query.words;
+        twitterController.getTUsers(q,function(err,data){
+            if(err){
+                res.status(500);
+                res.send(err);
+                next();
+            }
+            res.send(data);
+            next();
+        })
+    } else {
+        res.status(500);
+        res.send("Falta la palabra a buscar");
+        next();
+    }
+};
+
+exports.buscarTweets = function(req, res, next) {
+    if(req.query.words){
+        var q = req.query.words;
+        twitterController.getSearch(q,function(err,data){
+            if(err){
+                res.status(500);
+                res.send(err);
+                next();
+            }
+            res.send(data);
+            next();
+        })
+    } else {
+        res.status(500);
+        res.send("Falta la palabra a buscar");
+        next();
+    }
+};
+
 exports.analyze = function(req, res, next) {
     if(req.query.name){
         var username = req.query.name;
