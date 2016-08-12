@@ -1,11 +1,11 @@
 {
-    "port":3000,
-    "twitterApi":{
+    "port": 3000,
+    "twitterApi": {
         "consumer_key": "dD06rkZDLMF1YpFn0irBMWYG4",
         "consumer_secret": "gzZxGkEgRwxU5GnMu3jIRy2AbAZQ8yFdIdxtdFgNm5w75Llxys",
         "access_token_key": "3499369996-ZJsppu2i2NkWeyJZiYpIIB1D3NX34cyweAh75L9",
         "access_token_secret": "i8moPiByClSzqIr4aNC5A9TKcSGbVH3OMoVqZn9f28Sd3"
     },
-    "facebookApi":{},
-    "mysql":{}
+    "facebookApi": {},
+    "mysql": {}
 }

@@ -4,16 +4,18 @@ var cacheController = require('../controllers/cache');
 var Twitter = require('twitter');
 
 exports.analyze = function(req, res, next) {
-    if(req.query.name){
+    if (req.query.name) {
         var username = req.query.name;
-        twitterController.getTweets(username,function(err,data){
-            if(err || !data){
+        twitterController.getTweets(username, function(err, data) {
+            if (err || !data) {
                 res.status(500);
                 res.send(err);
                 return next();
             }
-            ibmController.analyzeText(data,function(response){})
-            res.send({"Status":"Te vamos a mandar un mail con el codigo"});
+            ibmController.analyzeText(data, function(response) {})
+            res.send({
+                "Status": "Te vamos a mandar un mail con el codigo"
+            });
             next();
         })
     } else {
@@ -24,22 +26,24 @@ exports.analyze = function(req, res, next) {
 };
 
 exports.analyzeFollowing = function(req, res, next) {
-    if(req.query.name){
+    if (req.query.name) {
         var username = req.query.name;
-        twitterController.getTweets(username,function(err,textUser){
-            if(err){
+        twitterController.getTweets(username, function(err, textUser) {
+            if (err) {
                 res.status(500);
                 res.send(err);
                 return next();
             }
-            twitterController.getFollowersTweets(username,function(err,textsFriends){
-                if(err){
+            twitterController.getFollowersTweets(username, function(err, textsFriends) {
+                if (err) {
                     res.status(500);
                     res.send(err);
                     next();
                 }
-                ibmController.analyzeMultipleText(textUser,textsFriends,function(response){})
-                res.send({"Status":"Te vamos a mandar un mail con el codigo"});
+                ibmController.analyzeMultipleText(textUser, textsFriends, function(response) {})
+                res.send({
+                    "Status": "Te vamos a mandar un mail con el codigo"
+                });
                 next();
             })
         })
@@ -51,9 +55,9 @@ exports.analyzeFollowing = function(req, res, next) {
 };
 
 exports.analyzeFollowingCached = function(req, res, next) {
-    if(req.query.name){
+    if (req.query.name) {
         var username = req.query.name;
-        cacheController.analizeUser(username, function(response){})
+        cacheController.analizeUser(username, function(response) {})
     } else {
         res.status(500);
         res.send("Falta el username");
