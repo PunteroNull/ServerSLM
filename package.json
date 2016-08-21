@@ -1,21 +1,28 @@
 {
-  "name": "ServerSLM",
-  "version": "0.0.1",
-  "private": true,
+  "name": "slm-api",
+  "version": "1.0.0",
+  "description": "",
   "scripts": {
-    "start": "node ./app"
+    "start": "node ./bin/www"
   },
+  "author": "",
   "dependencies": {
-    "async": "^0.9.2",
-    "body-parser": "~1.10.2",
-    "express": "~4.11.1",
-    "express-ipfilter": "0.0.23",
-    "express-myconnection": "1.0.4",
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "cluster": "^0.7.7",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-body-parser-json-error": "^0.1.0",
     "fs": "0.0.2",
-    "mongodb": "^2.0",
-    "mysql": "^2.5.5",
-    "nodemailer": "^2.4.2",
-    "twitter": "^1.2.5",
-    "underscore": "^1.8.2"
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "mongodb": "^2.2.7",
+    "mysql": "^2.11.1",
+    "nodemailer": "^2.5.0",
+    "nodemailer-smtp-transport": "^2.6.0",
+    "require-webpack-compat": "^3.0.0",
+    "twitter": "^1.4.0",
+    "underscore": "^1.8.3"
   }
 }

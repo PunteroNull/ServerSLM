@@ -1,7 +1,8 @@
 var Twitter = require('twitter');
 
-exports.getTweets = function(username, cb) { //Trae los Tweets de un usuario y los procesa
-    var client = new Twitter(GlobalConfigConnections.twitterApi);
+//Trae los Tweets de un usuario y los procesa
+exports.getTweets = function(username, cb) {
+    var client = new Twitter(ConfigServer.twitterApi);
     client.get('statuses/user_timeline', {
         "screen_name": username,
         "count": 200,
@@ -26,8 +27,9 @@ exports.getTweets = function(username, cb) { //Trae los Tweets de un usuario y l
     });
 }
 
-exports.getFollowersTweets = function(username, cb) { //Trae los tweets de los usuario que sigue el usuario
-    var client = new Twitter(GlobalConfigConnections.twitterApi);
+//Trae los tweets de los usuario que sigue el usuario
+exports.getFollowersTweets = function(username, cb) {
+    var client = new Twitter(ConfigServer.twitterApi);
     var that = this;
     client.get('friends/list', {
         "screen_name": username,

@@ -1,2 +1,7 @@
 node_modules/
+node_modules
+node_modules/*.*
+.vscode/
+.directory
+config/init.json
 api_key.txt

@@ -1,21 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var twitterRoute = require('./twitter');
-var ibmRoute = require('./ibm');
+var message = require('../common/messages.json');
 
-//Con el nombre de un usuario, analiza sus tweets, analiza via Alchemy y arma los resultados. Le avisa que le mandaran un mail con un codigo
-router.get('/twitter', twitterRoute.analyze);
+var routeModule = require('./config.js').routeModule;
+var configRoute = require('./routes.json');
 
-//Con el nombre de un usuario, analiza sus tweets y de los usuarios que sigue, analiza via Alchemy y arma los resultados. Le avisa que le mandaran un mail
-router.get('/twitterWithFollowing', twitterRoute.analyzeFollowing);
+//Middleware para procesar los filtros de las rutas
+router.use(function(req, res, next) {
+    var url = req.originalUrl;
+    url = url.split('?')[0];
+    if(!configRoute || !configRoute[url] || !configRoute[url][req.method])
+        return res.sender(message.badRequest);
 
-//Para probar con resultados de prueba de Alchemy
-router.get('/testProccess', ibmRoute.test);
+    var specificRoute = configRoute[url][req.method];
 
-//Sirve para ir agregando nuevas palabras clave a una categoria y darle mas o menos peso segun el puntaje del feedback
-router.post('/feedback', ibmRoute.feedback);
+    var urlRoute = routeModule[specificRoute.urlRoute];
+    var executeFunction = specificRoute.executeFunction;
 
-//Obtiene los resultados de un codigo especifico
-router.get('/result', ibmRoute.getResult);
+    urlRoute[executeFunction](req, res, function() {});
+});
 
 module.exports = router;

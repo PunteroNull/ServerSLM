@@ -1,0 +1,82 @@
+{
+    "/checkStatus": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./server",
+            "executeFunction": "checkStatus"
+        }
+    },
+    "/facebook": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./facebook",
+            "executeFunction": "analyze"
+        }
+    },
+    "/twitter": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "analyze",
+            "valid":[
+                {
+                    "name":"name",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
+    "/twitterWithFollowing": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "analyzeFollowing",
+            "valid":[
+                {
+                    "name":"name",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
+    "/feedback": {
+        "method": ["POST"],
+        "POST": {
+            "urlRoute": "./result",
+            "executeFunction": "feedback",
+            "valid":[
+                {
+                    "name":"categories",
+                    "type": "object",
+                    "input": "body"
+                },
+                {
+                    "name":"keywords",
+                    "type": "object",
+                    "input": "body"
+                },
+                {
+                    "name":"note",
+                    "type": "number",
+                    "input": "body"
+                }
+            ]
+        }
+    },
+    "/result": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./result",
+            "executeFunction": "getResult",
+            "valid":[
+                {
+                    "name":"code",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    }
+}

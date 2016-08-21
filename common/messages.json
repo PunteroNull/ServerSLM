@@ -1,0 +1,18 @@
+{
+    "cantGetTweets": {
+        "status": 500,
+        "message":"cant_get_tweets"
+    },
+    "cantGetHistory": {
+        "status": 500,
+        "message":"cant_get_history"
+    },
+    "badRequest": {
+        "status": 400,
+        "message":  "bad_request"
+    },
+    "emailSended": {
+        "status": 200,
+        "message": "email_sended"
+    }
+}
