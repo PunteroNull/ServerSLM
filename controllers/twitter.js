@@ -1,6 +1,4 @@
-var twitterController = require('../controllers/twitter');
 var Twitter = require('twitter');
-var async = require('async');
 
 exports.getTweets = function(username, cb) { //Trae los Tweets de un usuario y los procesa
     var client = new Twitter(GlobalConfigConnections.twitterApi);
@@ -18,7 +16,7 @@ exports.getTweets = function(username, cb) { //Trae los Tweets de un usuario y l
         });
         auxString = auxString.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
         auxString = auxString.replace(/(\r\n|\n|\r|"|\\)/gm, "");
-        auxString = auxString.replace(/(RT|via)((?:\b\W*@\w+)+)/, '');
+        auxString = auxString.replace(/(RT|via)((?:\b\W*@\w+)+)/g, '');
         auxString = auxString.replace(/RT/g, '');
         auxString = auxString.replace(/#/g, '');
         auxString = auxString.replace(/@/g, '');
@@ -40,7 +38,6 @@ exports.getFollowersTweets = function(username, cb) { //Trae los tweets de los u
         friends.users.sort(sortFriends);
         friends.users.reverse();
         var arrayFriends = _.pluck(friends.users.slice(0, 14), 'screen_name'); //Ponerlo en un config para poder variar la cantidad
-        console.log(arrayFriends);
         async.map(arrayFriends, that.getTweets, function(err, results) {
             if (err)
                 return cb(err);

@@ -7,5 +7,8 @@
         "access_token_secret": "i8moPiByClSzqIr4aNC5A9TKcSGbVH3OMoVqZn9f28Sd3"
     },
     "facebookApi": {},
-    "mysql": {}
+    "mysql": {},
+    "mongo": {
+        "url":"mongodb://localhost:27017/local"
+    }
 }

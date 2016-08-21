@@ -1,8 +1,6 @@
 var AlchemyAPI = require('../alchemyapi.js');
-var async = require('async');
 var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var url = 'mongodb://localhost:27017/local'; //Sacarlo a un config
+var url = GlobalConfigConnections.mongo.url; //Sacarlo a un config
 var arrayFinds = [];
 var arrayWords = [];
 var dbMongo;

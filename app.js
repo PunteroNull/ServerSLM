@@ -1,11 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
-var app = express();
-var router = require('./routes');
 global._ = require('underscore');
+global.async = require('async');
 global.GlobalConfigConnections = require('./configs/connections.json');
 global.GlobalConfig = require('./configs/values.json');
+var app = express();
+var router = require('./routes');
+
 
 app.use(function(req, res, next) {
     var oneof = false;
