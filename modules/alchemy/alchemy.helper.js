@@ -83,7 +83,7 @@ exports.sendCode = function(code) {
     })
 }
 
-exports.saveResult = function (result, code) {
+exports.saveResult = function (username, result, code) {
     MongoClient.connect(ConfigServer.mongo.url, function(err, db) {
         var collection = db.collection('results');
         dbMongo = db;
@@ -91,7 +91,8 @@ exports.saveResult = function (result, code) {
         var aux = {
             "code": code,
             "result": result,
-            "date": now
+            "date": now,
+            "username": username
         }
         collection.insert(aux, function(err, docs) {
             if (err)

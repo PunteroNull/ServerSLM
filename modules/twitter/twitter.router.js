@@ -9,7 +9,7 @@ exports.analyze = function(req, res, next) {
             res.sender(message.cantGetTweets);
             return next();
         }
-        alchemyController.analyzeText(data, function(response) {});
+        alchemyController.analyzeText(username, data, function(response) {});
         res.sender(message.emailSended);
         next();
     })
@@ -27,7 +27,7 @@ exports.analyzeFollowing = function(req, res, next) {
                 res.sender(message.cantGetTweets);
                 return next();
             }
-            alchemyController.analyzeMultipleText(textUser, textsFriends, function(response) {});
+            alchemyController.analyzeMultipleText(username, textUser, textsFriends, function(response) {});
             res.sender(message.emailSended);
             next();
         })

@@ -1,0 +1,4359 @@
+{
+    "art and entertainment": {
+        "id": 1
+    },
+    "books and literature": {
+        "id": 2,
+        "parent": "art and entertainment"
+    },
+    "best-sellers": {
+        "id": 3,
+        "parent": "books and literature"
+    },
+    "children's books": {
+        "id": 4,
+        "parent": "books and literature"
+    },
+    "e-books": {
+        "id": 5,
+        "parent": "books and literature"
+    },
+    "fan fiction": {
+        "id": 6,
+        "parent": "books and literature"
+    },
+    "magazines": {
+        "id": 7,
+        "parent": "books and literature"
+    },
+    "mythology": {
+        "id": 8,
+        "parent": "books and literature"
+    },
+    "non-fiction": {
+        "id": 9,
+        "parent": "books and literature"
+    },
+    "poetry": {
+        "id": 10,
+        "parent": "books and literature"
+    },
+    "reference books": {
+        "id": 11,
+        "parent": "books and literature"
+    },
+    "romance novels": {
+        "id": 12,
+        "parent": "books and literature"
+    },
+    "science fiction": {
+        "id": 13,
+        "parent": "books and literature"
+    },
+    "textbooks": {
+        "id": 14,
+        "parent": "books and literature"
+    },
+    "celebrity fan and gossip": {
+        "id": 15,
+        "parent": "art and entertainment"
+    },
+    "comics and animation": {
+        "id": 16,
+        "parent": "art and entertainment"
+    },
+    "anime and manga": {
+        "id": 17,
+        "parent": "comics and animation"
+    },
+    "cartoons": {
+        "id": 18,
+        "parent": "comics and animation"
+    },
+    "comics": {
+        "id": 19,
+        "parent": "comics and animation"
+    },
+    "dance": {
+        "id": 20,
+        "parent": "art and entertainment"
+    },
+    "ballet": {
+        "id": 21,
+        "parent": "dance"
+    },
+    "ballroom dance": {
+        "id": 22,
+        "parent": "dance"
+    },
+    "belly dance": {
+        "id": 23,
+        "parent": "dance"
+    },
+    "modern dance": {
+        "id": 24,
+        "parent": "dance"
+    },
+    "pole dancing": {
+        "id": 25,
+        "parent": "dance"
+    },
+    "humor": {
+        "id": 26,
+        "parent": "art and entertainment"
+    },
+    "movies": {
+        "id": 27,
+        "parent": "art and entertainment"
+    },
+    "film festivals and awards": {
+        "id": 28,
+        "parent": "movies"
+    },
+    "movies and tv": {
+        "id": 29,
+        "parent": "art and entertainment"
+    },
+    "action": {
+        "id": 30,
+        "parent": "movies and tv"
+    },
+    "animated": {
+        "id": 31,
+        "parent": "movies and tv"
+    },
+    "bollywood": {
+        "id": 32,
+        "parent": "movies and tv"
+    },
+    "children's": {
+        "id": 33,
+        "parent": "movies and tv"
+    },
+    "classics": {
+        "id": 34,
+        "parent": "movies and tv"
+    },
+    "silent films": {
+        "id": 35,
+        "parent": "classics"
+    },
+    "comedies": {
+        "id": 36,
+        "parent": "movies and tv"
+    },
+    "cult classics": {
+        "id": 37,
+        "parent": "movies and tv"
+    },
+    "documentaries": {
+        "id": 38,
+        "parent": "movies and tv"
+    },
+    "dramas": {
+        "id": 39,
+        "parent": "movies and tv"
+    },
+    "horror": {
+        "id": 40,
+        "parent": "movies and tv"
+    },
+    "independent": {
+        "id": 41,
+        "parent": "movies and tv"
+    },
+    "reviews": {
+        "id": 42,
+        "parent": "movies"
+    },
+    "trailers": {
+        "id": 43,
+        "parent": "movies"
+    },
+    "reality": {
+        "id": 44,
+        "parent": "movies and tv"
+    },
+    "romantic comedies": {
+        "id": 45,
+        "parent": "movies and tv"
+    },
+    "talk shows": {
+        "id": 46,
+        "parent": "movies and tv"
+    },
+    "television": {
+        "id": 47,
+        "parent": "movies and tv"
+    },
+    "thrillers": {
+        "id": 48,
+        "parent": "movies and tv"
+    },
+    "westerns": {
+        "id": 49,
+        "parent": "movies and tv"
+    },
+    "music": {
+        "id": 50,
+        "parent": "art and entertainment"
+    },
+    "music genres": {
+        "id": 51,
+        "parent": "music"
+    },
+    "blues": {
+        "id": 52,
+        "parent": "music genres"
+    },
+    "classical music": {
+        "id": 53,
+        "parent": "music genres"
+    },
+    "country music": {
+        "id": 54,
+        "parent": "music genres"
+    },
+    "easy listening": {
+        "id": 55,
+        "parent": "music genres"
+    },
+    "electronic music": {
+        "id": 56,
+        "parent": "music genres"
+    },
+    "folk music": {
+        "id": 57,
+        "parent": "music genres"
+    },
+    "hip hop": {
+        "id": 58,
+        "parent": "music genres"
+    },
+    "jazz": {
+        "id": 59,
+        "parent": "music genres"
+    },
+    "opera": {
+        "id": 60,
+        "parent": "music genres"
+    },
+    "pop music": {
+        "id": 61,
+        "parent": "music genres"
+    },
+    "punk": {
+        "id": 62,
+        "parent": "music genres"
+    },
+    "religious music": {
+        "id": 63,
+        "parent": "music genres"
+    },
+    "rock music": {
+        "id": 64,
+        "parent": "music genres"
+    },
+    "ska": {
+        "id": 65,
+        "parent": "music genres"
+    },
+    "soul music": {
+        "id": 66,
+        "parent": "music genres"
+    },
+    "soundtracks": {
+        "id": 67,
+        "parent": "music genres"
+    },
+    "world music": {
+        "id": 68,
+        "parent": "music genres"
+    },
+    "music reference": {
+        "id": 69,
+        "parent": "music"
+    },
+    "music composition and theory": {
+        "id": 70,
+        "parent": "music reference"
+    },
+    "sheet music": {
+        "id": 71,
+        "parent": "music reference"
+    },
+    "musical instruments": {
+        "id": 72,
+        "parent": "music"
+    },
+    "drums": {
+        "id": 73,
+        "parent": "musical instruments"
+    },
+    "guitars": {
+        "id": 74,
+        "parent": "musical instruments"
+    },
+    "pianos": {
+        "id": 75,
+        "parent": "musical instruments"
+    },
+    "recording industry": {
+        "id": 76,
+        "parent": "music"
+    },
+    "music awards": {
+        "id": 77,
+        "parent": "recording industry"
+    },
+    "record labels": {
+        "id": 78,
+        "parent": "recording industry"
+    },
+    "singing": {
+        "id": 79,
+        "parent": "music"
+    },
+    "radio": {
+        "id": 80,
+        "parent": "art and entertainment"
+    },
+    "podcasts": {
+        "id": 81,
+        "parent": "radio"
+    },
+    "radio programs": {
+        "id": 82,
+        "parent": "radio"
+    },
+    "talk radio": {
+        "id": 83,
+        "parent": "radio"
+    },
+    "shows and events": {
+        "id": 84,
+        "parent": "art and entertainment"
+    },
+    "beauty contest": {
+        "id": 85,
+        "parent": "shows and events"
+    },
+    "circus": {
+        "id": 86,
+        "parent": "shows and events"
+    },
+    "classical concert": {
+        "id": 87,
+        "parent": "shows and events"
+    },
+    "concert": {
+        "id": 88,
+        "parent": "shows and events"
+    },
+    "conference": {
+        "id": 89,
+        "parent": "shows and events"
+    },
+    "exhibition": {
+        "id": 90,
+        "parent": "shows and events"
+    },
+    "fair": {
+        "id": 91,
+        "parent": "shows and events"
+    },
+    "festival": {
+        "id": 92,
+        "parent": "shows and events"
+    },
+    "sports event": {
+        "id": 93,
+        "parent": "shows and events"
+    },
+    "theatre": {
+        "id": 94,
+        "parent": "art and entertainment"
+    },
+    "theatre awards": {
+        "id": 95,
+        "parent": "theatre"
+    },
+    "theatre companies": {
+        "id": 96,
+        "parent": "theatre"
+    },
+    "visual art and design": {
+        "id": 97,
+        "parent": "art and entertainment"
+    },
+    "architecture": {
+        "id": 98,
+        "parent": "visual art and design"
+    },
+    "art and craft supplies": {
+        "id": 99,
+        "parent": "visual art and design"
+    },
+    "art museums and galleries": {
+        "id": 100,
+        "parent": "visual art and design"
+    },
+    "arts education": {
+        "id": 101,
+        "parent": "visual art and design"
+    },
+    "design": {
+        "id": 102,
+        "parent": "visual art and design"
+    },
+    "graphic design": {
+        "id": 103,
+        "parent": "design"
+    },
+    "industrial and product design": {
+        "id": 104,
+        "parent": "design"
+    },
+    "interior design": {
+        "id": 105,
+        "parent": "design"
+    },
+    "digital art": {
+        "id": 106,
+        "parent": "visual art and design"
+    },
+    "drawing": {
+        "id": 107,
+        "parent": "visual art and design"
+    },
+    "painting": {
+        "id": 108,
+        "parent": "visual art and design"
+    },
+    "performance art": {
+        "id": 109,
+        "parent": "visual art and design"
+    },
+    "restoration": {
+        "id": 110,
+        "parent": "visual art and design"
+    },
+    "sculpture": {
+        "id": 111,
+        "parent": "visual art and design"
+    },
+    "automotive and vehicles": {
+        "id": 112
+    },
+    "auto parts": {
+        "id": 113,
+        "parent": "automotive and vehicles"
+    },
+    "auto repair": {
+        "id": 114,
+        "parent": "automotive and vehicles"
+    },
+    "bicycles and accessories": {
+        "id": 115,
+        "parent": "automotive and vehicles"
+    },
+    "mountain bikes": {
+        "id": 116,
+        "parent": "bicycles and accessories"
+    },
+    "boats and watercraft": {
+        "id": 117,
+        "parent": "automotive and vehicles"
+    },
+    "buying and selling cars": {
+        "id": 118,
+        "parent": "automotive and vehicles"
+    },
+    "campers and rvs": {
+        "id": 119,
+        "parent": "automotive and vehicles"
+    },
+    "cars": {
+        "id": 120,
+        "parent": "automotive and vehicles"
+    },
+    "car culture": {
+        "id": 121,
+        "parent": "cars"
+    },
+    "car industry": {
+        "id": 122,
+        "parent": "cars"
+    },
+    "convertible": {
+        "id": 123,
+        "parent": "cars"
+    },
+    "coupe": {
+        "id": 124,
+        "parent": "cars"
+    },
+    "crossover": {
+        "id": 125,
+        "parent": "cars"
+    },
+    "diesel": {
+        "id": 126,
+        "parent": "cars"
+    },
+    "hatchback": {
+        "id": 127,
+        "parent": "cars"
+    },
+    "hybrid": {
+        "id": 128,
+        "parent": "cars"
+    },
+    "luxury": {
+        "id": 129,
+        "parent": "cars"
+    },
+    "performance vehicles": {
+        "id": 130,
+        "parent": "cars"
+    },
+    "sedan": {
+        "id": 131,
+        "parent": "cars"
+    },
+    "vintage cars": {
+        "id": 132,
+        "parent": "cars"
+    },
+    "wagon": {
+        "id": 133,
+        "parent": "cars"
+    },
+    "certified pre-owned": {
+        "id": 134,
+        "parent": "automotive and vehicles"
+    },
+    "commercial vehicles": {
+        "id": 135,
+        "parent": "automotive and vehicles"
+    },
+    "electric vehicles": {
+        "id": 136,
+        "parent": "automotive and vehicles"
+    },
+    "minivan": {
+        "id": 137,
+        "parent": "automotive and vehicles"
+    },
+    "motor shows": {
+        "id": 138,
+        "parent": "automotive and vehicles"
+    },
+    "motorcycles": {
+        "id": 139,
+        "parent": "automotive and vehicles"
+    },
+    "off-road vehicles": {
+        "id": 140,
+        "parent": "automotive and vehicles"
+    },
+    "road-side assistance": {
+        "id": 141,
+        "parent": "automotive and vehicles"
+    },
+    "scooters and mopeds": {
+        "id": 142,
+        "parent": "automotive and vehicles"
+    },
+    "trucks and suvs": {
+        "id": 143,
+        "parent": "automotive and vehicles"
+    },
+    "pickup trucks": {
+        "id": 144,
+        "parent": "trucks and suvs"
+    },
+    "suvs": {
+        "id": 145,
+        "parent": "trucks and suvs"
+    },
+    "truck accessories": {
+        "id": 146,
+        "parent": "trucks and suvs"
+    },
+    "vehicle brands": {
+        "id": 147,
+        "parent": "automotive and vehicles"
+    },
+    "acura": {
+        "id": 148,
+        "parent": "vehicle brands"
+    },
+    "alfa romeo": {
+        "id": 149,
+        "parent": "vehicle brands"
+    },
+    "audi": {
+        "id": 150,
+        "parent": "vehicle brands"
+    },
+    "bentley": {
+        "id": 151,
+        "parent": "vehicle brands"
+    },
+    "buick": {
+        "id": 152,
+        "parent": "vehicle brands"
+    },
+    "cadillac": {
+        "id": 153,
+        "parent": "vehicle brands"
+    },
+    "chevrolet": {
+        "id": 154,
+        "parent": "vehicle brands"
+    },
+    "chrysler": {
+        "id": 155,
+        "parent": "vehicle brands"
+    },
+    "ferrari": {
+        "id": 156,
+        "parent": "vehicle brands"
+    },
+    "fiat": {
+        "id": 157,
+        "parent": "vehicle brands"
+    },
+    "ford": {
+        "id": 158,
+        "parent": "vehicle brands"
+    },
+    "honda": {
+        "id": 159,
+        "parent": "vehicle brands"
+    },
+    "hyundai": {
+        "id": 160,
+        "parent": "vehicle brands"
+    },
+    "isuzu": {
+        "id": 161,
+        "parent": "vehicle brands"
+    },
+    "jeep": {
+        "id": 162,
+        "parent": "vehicle brands"
+    },
+    "kia": {
+        "id": 163,
+        "parent": "vehicle brands"
+    },
+    "lamborghini": {
+        "id": 164,
+        "parent": "vehicle brands"
+    },
+    "land rover": {
+        "id": 165,
+        "parent": "vehicle brands"
+    },
+    "maserati": {
+        "id": 166,
+        "parent": "vehicle brands"
+    },
+    "mazda": {
+        "id": 167,
+        "parent": "vehicle brands"
+    },
+    "mercedes-benz": {
+        "id": 168,
+        "parent": "vehicle brands"
+    },
+    "mitsubishi": {
+        "id": 169,
+        "parent": "vehicle brands"
+    },
+    "nissan": {
+        "id": 170,
+        "parent": "vehicle brands"
+    },
+    "infiniti": {
+        "id": 171,
+        "parent": "nissan"
+    },
+    "peugeot": {
+        "id": 172,
+        "parent": "vehicle brands"
+    },
+    "pontiac": {
+        "id": 173,
+        "parent": "vehicle brands"
+    },
+    "porsche": {
+        "id": 174,
+        "parent": "vehicle brands"
+    },
+    "rolls-royce": {
+        "id": 175,
+        "parent": "vehicle brands"
+    },
+    "saab": {
+        "id": 176,
+        "parent": "vehicle brands"
+    },
+    "scion": {
+        "id": 177,
+        "parent": "vehicle brands"
+    },
+    "subaru": {
+        "id": 178,
+        "parent": "vehicle brands"
+    },
+    "suzuki": {
+        "id": 179,
+        "parent": "vehicle brands"
+    },
+    "toyota": {
+        "id": 180,
+        "parent": "vehicle brands"
+    },
+    "volkswagen": {
+        "id": 181,
+        "parent": "vehicle brands"
+    },
+    "volvo": {
+        "id": 182,
+        "parent": "vehicle brands"
+    },
+    "vehicle rental": {
+        "id": 183,
+        "parent": "automotive and vehicles"
+    },
+    "business and industrial": {
+        "id": 184
+    },
+    "advertising and marketing": {
+        "id": 185,
+        "parent": "business and industrial"
+    },
+    "advertising": {
+        "id": 186,
+        "parent": "advertising and marketing"
+    },
+    "brand management": {
+        "id": 187,
+        "parent": "advertising and marketing"
+    },
+    "marketing": {
+        "id": 188,
+        "parent": "advertising and marketing"
+    },
+    "public relations": {
+        "id": 189,
+        "parent": "advertising and marketing"
+    },
+    "telemarketing": {
+        "id": 190,
+        "parent": "advertising and marketing"
+    },
+    "aerospace and defense": {
+        "id": 191,
+        "parent": "business and industrial"
+    },
+    "defense industry": {
+        "id": 192,
+        "parent": "aerospace and defense"
+    },
+    "space technology": {
+        "id": 193,
+        "parent": "aerospace and defense"
+    },
+    "agriculture and forestry": {
+        "id": 194,
+        "parent": "business and industrial"
+    },
+    "agriculture": {
+        "id": 195,
+        "parent": "agriculture and forestry"
+    },
+    "aquaculture": {
+        "id": 196,
+        "parent": "agriculture and forestry"
+    },
+    "crops and seed": {
+        "id": 197,
+        "parent": "agriculture and forestry"
+    },
+    "farms and ranches": {
+        "id": 198,
+        "parent": "agriculture and forestry"
+    },
+    "food production": {
+        "id": 199,
+        "parent": "agriculture and forestry"
+    },
+    "forestry": {
+        "id": 200,
+        "parent": "agriculture and forestry"
+    },
+    "horticulture": {
+        "id": 201,
+        "parent": "agriculture and forestry"
+    },
+    "livestock": {
+        "id": 202,
+        "parent": "agriculture and forestry"
+    },
+    "organic farming": {
+        "id": 203,
+        "parent": "agriculture and forestry"
+    },
+    "automation": {
+        "id": 204,
+        "parent": "business and industrial"
+    },
+    "robotics": {
+        "id": 205,
+        "parent": "automation"
+    },
+    "biomedical": {
+        "id": 206,
+        "parent": "business and industrial"
+    },
+    "business news": {
+        "id": 207,
+        "parent": "business and industrial"
+    },
+    "business operations": {
+        "id": 208,
+        "parent": "business and industrial"
+    },
+    "business plans": {
+        "id": 209,
+        "parent": "business operations"
+    },
+    "human resources": {
+        "id": 210,
+        "parent": "business operations"
+    },
+    "compensation and benefits": {
+        "id": 211,
+        "parent": "human resources"
+    },
+    "payroll services": {
+        "id": 212,
+        "parent": "human resources"
+    },
+    "management": {
+        "id": 213,
+        "parent": "business operations"
+    },
+    "business process": {
+        "id": 214,
+        "parent": "management"
+    },
+    "project management": {
+        "id": 215,
+        "parent": "management"
+    },
+    "supply chain management": {
+        "id": 216,
+        "parent": "management"
+    },
+    "business software": {
+        "id": 217,
+        "parent": "business and industrial"
+    },
+    "chemicals industry": {
+        "id": 218,
+        "parent": "business and industrial"
+    },
+    "adhesives": {
+        "id": 219,
+        "parent": "chemicals industry"
+    },
+    "cleaning agents": {
+        "id": 220,
+        "parent": "chemicals industry"
+    },
+    "dyes and pigments": {
+        "id": 221,
+        "parent": "chemicals industry"
+    },
+    "plastics and polymers": {
+        "id": 222,
+        "parent": "chemicals industry"
+    },
+    "company": {
+        "id": 223,
+        "parent": "business and industrial"
+    },
+    "annual report": {
+        "id": 224,
+        "parent": "company"
+    },
+    "bankruptcy": {
+        "id": 225,
+        "parent": "company"
+    },
+    "earnings": {
+        "id": 226,
+        "parent": "company"
+    },
+    "joint venture": {
+        "id": 227,
+        "parent": "company"
+    },
+    "merger and acquisition": {
+        "id": 228,
+        "parent": "company"
+    },
+    "construction": {
+        "id": 229,
+        "parent": "business and industrial"
+    },
+    "energy": {
+        "id": 230,
+        "parent": "business and industrial"
+    },
+    "coal": {
+        "id": 231,
+        "parent": "energy"
+    },
+    "electricity": {
+        "id": 232,
+        "parent": "energy"
+    },
+    "natural gas": {
+        "id": 233,
+        "parent": "energy"
+    },
+    "nuclear power": {
+        "id": 234,
+        "parent": "energy"
+    },
+    "nuclear accident": {
+        "id": 235,
+        "parent": "nuclear power"
+    },
+    "oil": {
+        "id": 236,
+        "parent": "energy"
+    },
+    "diesel fuel": {
+        "id": 237,
+        "parent": "oil"
+    },
+    "oil and gas prices": {
+        "id": 238,
+        "parent": "oil"
+    },
+    "oil company": {
+        "id": 239,
+        "parent": "oil"
+    },
+    "renewable energy": {
+        "id": 240,
+        "parent": "energy"
+    },
+    "biofuel": {
+        "id": 241,
+        "parent": "renewable energy"
+    },
+    "fuel cell": {
+        "id": 242,
+        "parent": "renewable energy"
+    },
+    "geothermal energy": {
+        "id": 243,
+        "parent": "renewable energy"
+    },
+    "hydroelectric energy": {
+        "id": 244,
+        "parent": "renewable energy"
+    },
+    "solar energy": {
+        "id": 245,
+        "parent": "renewable energy"
+    },
+    "wind energy": {
+        "id": 246,
+        "parent": "renewable energy"
+    },
+    "fashion industry": {
+        "id": 247,
+        "parent": "business and industrial"
+    },
+    "food industry": {
+        "id": 248,
+        "parent": "business and industrial"
+    },
+    "green solutions": {
+        "id": 249,
+        "parent": "business and industrial"
+    },
+    "hospitality industry": {
+        "id": 250,
+        "parent": "business and industrial"
+    },
+    "event planning": {
+        "id": 251,
+        "parent": "hospitality industry"
+    },
+    "food service": {
+        "id": 252,
+        "parent": "hospitality industry"
+    },
+    "iron and steel industry": {
+        "id": 253,
+        "parent": "business and industrial"
+    },
+    "logistics": {
+        "id": 254,
+        "parent": "business and industrial"
+    },
+    "air freight": {
+        "id": 255,
+        "parent": "logistics"
+    },
+    "freight train": {
+        "id": 256,
+        "parent": "logistics"
+    },
+    "manufacturing": {
+        "id": 257,
+        "parent": "business and industrial"
+    },
+    "metals": {
+        "id": 258,
+        "parent": "business and industrial"
+    },
+    "mining industry": {
+        "id": 259,
+        "parent": "business and industrial"
+    },
+    "paper industry": {
+        "id": 260,
+        "parent": "business and industrial"
+    },
+    "pharmaceutical industry": {
+        "id": 261,
+        "parent": "business and industrial"
+    },
+    "publishing": {
+        "id": 262,
+        "parent": "business and industrial"
+    },
+    "record company": {
+        "id": 263,
+        "parent": "business and industrial"
+    },
+    "shipbuilding": {
+        "id": 264,
+        "parent": "business and industrial"
+    },
+    "tanning": {
+        "id": 265,
+        "parent": "business and industrial"
+    },
+    "textile industry": {
+        "id": 266,
+        "parent": "business and industrial"
+    },
+    "war industry": {
+        "id": 267,
+        "parent": "business and industrial"
+    },
+    "weaponry": {
+        "id": 268,
+        "parent": "war industry"
+    },
+    "careers": {
+        "id": 269
+    },
+    "career advice": {
+        "id": 270,
+        "parent": "careers"
+    },
+    "career planning": {
+        "id": 271,
+        "parent": "careers"
+    },
+    "job fairs": {
+        "id": 272,
+        "parent": "careers"
+    },
+    "job search": {
+        "id": 273,
+        "parent": "careers"
+    },
+    "nursing": {
+        "id": 274,
+        "parent": "careers"
+    },
+    "resume writing and advice": {
+        "id": 275,
+        "parent": "careers"
+    },
+    "telecommuting": {
+        "id": 276,
+        "parent": "careers"
+    },
+    "u.s. military": {
+        "id": 277,
+        "parent": "careers"
+    },
+    "education": {
+        "id": 278
+    },
+    "adult education": {
+        "id": 279,
+        "parent": "education"
+    },
+    "alumni and reunions": {
+        "id": 280,
+        "parent": "education"
+    },
+    "art history": {
+        "id": 281,
+        "parent": "education"
+    },
+    "distance learning": {
+        "id": 282,
+        "parent": "education"
+    },
+    "english as a second language": {
+        "id": 283,
+        "parent": "education"
+    },
+    "grade school": {
+        "id": 284,
+        "parent": "education"
+    },
+    "graduate school": {
+        "id": 285,
+        "parent": "education"
+    },
+    "college": {
+        "id": 286,
+        "parent": "graduate school"
+    },
+    "college administration": {
+        "id": 287,
+        "parent": "graduate school"
+    },
+    "college life": {
+        "id": 288,
+        "parent": "graduate school"
+    },
+    "high school": {
+        "id": 289,
+        "parent": "education"
+    },
+    "homeschooling": {
+        "id": 290,
+        "parent": "education"
+    },
+    "homework and study tips": {
+        "id": 291,
+        "parent": "education"
+    },
+    "language learning": {
+        "id": 292,
+        "parent": "education"
+    },
+    "school": {
+        "id": 293,
+        "parent": "education"
+    },
+    "private school": {
+        "id": 294,
+        "parent": "school"
+    },
+    "special education": {
+        "id": 295,
+        "parent": "education"
+    },
+    "studying business": {
+        "id": 296,
+        "parent": "education"
+    },
+    "teaching and classroom resources": {
+        "id": 297,
+        "parent": "education"
+    },
+    "lesson plans": {
+        "id": 298,
+        "parent": "teaching and classroom resources"
+    },
+    "school supplies": {
+        "id": 299,
+        "parent": "teaching and classroom resources"
+    },
+    "family and parenting": {
+        "id": 300
+    },
+    "adoption": {
+        "id": 301,
+        "parent": "family and parenting"
+    },
+    "babies and toddlers": {
+        "id": 302,
+        "parent": "family and parenting"
+    },
+    "baby clothes": {
+        "id": 303,
+        "parent": "babies and toddlers"
+    },
+    "baby food": {
+        "id": 304,
+        "parent": "babies and toddlers"
+    },
+    "children": {
+        "id": 305,
+        "parent": "family and parenting"
+    },
+    "daycare and preschool": {
+        "id": 306,
+        "parent": "children"
+    },
+    "eldercare": {
+        "id": 307,
+        "parent": "family and parenting"
+    },
+    "motherhood": {
+        "id": 308,
+        "parent": "family and parenting"
+    },
+    "artificial insemination": {
+        "id": 309,
+        "parent": "motherhood"
+    },
+    "pregnancy": {
+        "id": 310,
+        "parent": "motherhood"
+    },
+    "parenting teens": {
+        "id": 311,
+        "parent": "family and parenting"
+    },
+    "special needs kids": {
+        "id": 312,
+        "parent": "family and parenting"
+    },
+    "finance": {
+        "id": 313
+    },
+    "accounting and auditing": {
+        "id": 314,
+        "parent": "finance"
+    },
+    "billing and invoicing": {
+        "id": 315,
+        "parent": "accounting and auditing"
+    },
+    "bookkeeping": {
+        "id": 316,
+        "parent": "accounting and auditing"
+    },
+    "tax preparation and planning": {
+        "id": 317,
+        "parent": "accounting and auditing"
+    },
+    "bank": {
+        "id": 318,
+        "parent": "finance"
+    },
+    "atms": {
+        "id": 319,
+        "parent": "bank"
+    },
+    "bank account": {
+        "id": 320,
+        "parent": "bank"
+    },
+    "checks": {
+        "id": 321,
+        "parent": "bank"
+    },
+    "financial news": {
+        "id": 322,
+        "parent": "finance"
+    },
+    "\"grants": {
+        "id": 323,
+        "parent": "finance"
+    },
+    " scholarships and financial aid\"": {
+        "id": 324,
+        "parent": "\"grants"
+    },
+    "financial aid": {
+        "id": 325,
+        "parent": " scholarships and financial aid\""
+    },
+    "government grants": {
+        "id": 326,
+        "parent": " scholarships and financial aid\""
+    },
+    "scholarships": {
+        "id": 327,
+        "parent": " scholarships and financial aid\""
+    },
+    "investing": {
+        "id": 328,
+        "parent": "finance"
+    },
+    "beginning investing": {
+        "id": 329,
+        "parent": "investing"
+    },
+    "brokerages": {
+        "id": 330,
+        "parent": "investing"
+    },
+    "day trading": {
+        "id": 331,
+        "parent": "investing"
+    },
+    "funds": {
+        "id": 332,
+        "parent": "investing"
+    },
+    "exchange traded funds": {
+        "id": 333,
+        "parent": "funds"
+    },
+    "hedge fund": {
+        "id": 334,
+        "parent": "funds"
+    },
+    "mutual funds": {
+        "id": 335,
+        "parent": "funds"
+    },
+    "futures trading": {
+        "id": 336,
+        "parent": "investing"
+    },
+    "options": {
+        "id": 337,
+        "parent": "investing"
+    },
+    "portfolio": {
+        "id": 338,
+        "parent": "investing"
+    },
+    "stocks": {
+        "id": 339,
+        "parent": "investing"
+    },
+    "venture capital": {
+        "id": 340,
+        "parent": "investing"
+    },
+    "personal finance": {
+        "id": 341,
+        "parent": "finance"
+    },
+    "debt management": {
+        "id": 342,
+        "parent": "personal finance"
+    },
+    "financial planning": {
+        "id": 343,
+        "parent": "personal finance"
+    },
+    "asset and portfolio management": {
+        "id": 344,
+        "parent": "financial planning"
+    },
+    "estate planning": {
+        "id": 345,
+        "parent": "financial planning"
+    },
+    "retirement and pension": {
+        "id": 346,
+        "parent": "financial planning"
+    },
+    "insurance": {
+        "id": 347,
+        "parent": "personal finance"
+    },
+    "car insurance": {
+        "id": 348,
+        "parent": "insurance"
+    },
+    "health insurance": {
+        "id": 349,
+        "parent": "insurance"
+    },
+    "homeowners insurance": {
+        "id": 350,
+        "parent": "insurance"
+    },
+    "life insurance": {
+        "id": 351,
+        "parent": "insurance"
+    },
+    "travel insurance": {
+        "id": 352,
+        "parent": "insurance"
+    },
+    "vehicle insurance": {
+        "id": 353,
+        "parent": "insurance"
+    },
+    "lending": {
+        "id": 354,
+        "parent": "personal finance"
+    },
+    "credit cards": {
+        "id": 355,
+        "parent": "lending"
+    },
+    "home financing": {
+        "id": 356,
+        "parent": "lending"
+    },
+    "personal loans": {
+        "id": 357,
+        "parent": "lending"
+    },
+    "student loans": {
+        "id": 358,
+        "parent": "lending"
+    },
+    "vehicle financing": {
+        "id": 359,
+        "parent": "lending"
+    },
+    "saving": {
+        "id": 360,
+        "parent": "personal finance"
+    },
+    "food and drink": {
+        "id": 361
+    },
+    "barbecues and grilling": {
+        "id": 362,
+        "parent": "food and drink"
+    },
+    "beverages": {
+        "id": 363,
+        "parent": "food and drink"
+    },
+    "alcoholic beverages": {
+        "id": 364,
+        "parent": "beverages"
+    },
+    "cocktails and beer": {
+        "id": 365,
+        "parent": "alcoholic beverages"
+    },
+    "wine": {
+        "id": 366,
+        "parent": "alcoholic beverages"
+    },
+    "non alcoholic beverages": {
+        "id": 367,
+        "parent": "beverages"
+    },
+    "bottled water": {
+        "id": 368,
+        "parent": "non alcoholic beverages"
+    },
+    "coffee and tea": {
+        "id": 369,
+        "parent": "non alcoholic beverages"
+    },
+    "soft drinks": {
+        "id": 370,
+        "parent": "non alcoholic beverages"
+    },
+    "cuisines": {
+        "id": 371,
+        "parent": "food and drink"
+    },
+    "american cuisine": {
+        "id": 372,
+        "parent": "cuisines"
+    },
+    "chinese cuisine": {
+        "id": 373,
+        "parent": "cuisines"
+    },
+    "french cuisine": {
+        "id": 374,
+        "parent": "cuisines"
+    },
+    "indian cuisine": {
+        "id": 375,
+        "parent": "cuisines"
+    },
+    "italian cuisine": {
+        "id": 376,
+        "parent": "cuisines"
+    },
+    "japanese cuisine": {
+        "id": 377,
+        "parent": "cuisines"
+    },
+    "mexican cuisine": {
+        "id": 378,
+        "parent": "cuisines"
+    },
+    "regional cuisine": {
+        "id": 379,
+        "parent": "cuisines"
+    },
+    "desserts and baking": {
+        "id": 380,
+        "parent": "food and drink"
+    },
+    "dining out": {
+        "id": 381,
+        "parent": "food and drink"
+    },
+    "food": {
+        "id": 382,
+        "parent": "food and drink"
+    },
+    "baked goods": {
+        "id": 383,
+        "parent": "food"
+    },
+    "breakfast foods": {
+        "id": 384,
+        "parent": "food"
+    },
+    "candy and sweets": {
+        "id": 385,
+        "parent": "food"
+    },
+    "condiments and dressings": {
+        "id": 386,
+        "parent": "food"
+    },
+    "fast food": {
+        "id": 387,
+        "parent": "food"
+    },
+    "frozen food": {
+        "id": 388,
+        "parent": "food"
+    },
+    "fruits and vegetables": {
+        "id": 389,
+        "parent": "food"
+    },
+    "grains and pasta": {
+        "id": 390,
+        "parent": "food"
+    },
+    "herbs and spices": {
+        "id": 391,
+        "parent": "food"
+    },
+    "salads": {
+        "id": 392,
+        "parent": "food"
+    },
+    "snack foods": {
+        "id": 393,
+        "parent": "food"
+    },
+    "food allergies": {
+        "id": 394,
+        "parent": "food and drink"
+    },
+    "food and grocery retailers": {
+        "id": 395,
+        "parent": "food and drink"
+    },
+    "bakeries": {
+        "id": 396,
+        "parent": "food and grocery retailers"
+    },
+    "butchers": {
+        "id": 397,
+        "parent": "food and grocery retailers"
+    },
+    "convenience stores": {
+        "id": 398,
+        "parent": "food and grocery retailers"
+    },
+    "grocery stores": {
+        "id": 399,
+        "parent": "food and grocery retailers"
+    },
+    "gastronomy": {
+        "id": 400,
+        "parent": "food and drink"
+    },
+    "slow food": {
+        "id": 401,
+        "parent": "gastronomy"
+    },
+    "health and lowfat cooking": {
+        "id": 402,
+        "parent": "food and drink"
+    },
+    "healthy eating": {
+        "id": 403,
+        "parent": "food and drink"
+    },
+    "kosher food": {
+        "id": 404,
+        "parent": "food and drink"
+    },
+    "vegan": {
+        "id": 405,
+        "parent": "food and drink"
+    },
+    "vegetarian": {
+        "id": 406,
+        "parent": "food and drink"
+    },
+    "health and fitness": {
+        "id": 407
+    },
+    "addiction": {
+        "id": 408,
+        "parent": "health and fitness"
+    },
+    "alcoholism": {
+        "id": 409,
+        "parent": "addiction"
+    },
+    "smoking addiction": {
+        "id": 410,
+        "parent": "addiction"
+    },
+    "substance abuse": {
+        "id": 411,
+        "parent": "addiction"
+    },
+    "aging": {
+        "id": 412,
+        "parent": "health and fitness"
+    },
+    "alternative medicine": {
+        "id": 413,
+        "parent": "health and fitness"
+    },
+    "herbs for health": {
+        "id": 414,
+        "parent": "alternative medicine"
+    },
+    "holistic healing": {
+        "id": 415,
+        "parent": "alternative medicine"
+    },
+    "homeopathy": {
+        "id": 416,
+        "parent": "alternative medicine"
+    },
+    "dental care": {
+        "id": 417,
+        "parent": "health and fitness"
+    },
+    "disease": {
+        "id": 418,
+        "parent": "health and fitness"
+    },
+    "aids and hiv": {
+        "id": 419,
+        "parent": "disease"
+    },
+    "allergies": {
+        "id": 420,
+        "parent": "disease"
+    },
+    "arthritis": {
+        "id": 421,
+        "parent": "disease"
+    },
+    "asthma": {
+        "id": 422,
+        "parent": "disease"
+    },
+    "autism and pdd": {
+        "id": 423,
+        "parent": "disease"
+    },
+    "cancer": {
+        "id": 424,
+        "parent": "disease"
+    },
+    "brain tumor": {
+        "id": 425,
+        "parent": "cancer"
+    },
+    "cholesterol": {
+        "id": 426,
+        "parent": "disease"
+    },
+    "chronic fatigue syndrome": {
+        "id": 427,
+        "parent": "disease"
+    },
+    "chronic pain": {
+        "id": 428,
+        "parent": "disease"
+    },
+    "cold and flu": {
+        "id": 429,
+        "parent": "disease"
+    },
+    "deafness": {
+        "id": 430,
+        "parent": "disease"
+    },
+    "diabetes": {
+        "id": 431,
+        "parent": "disease"
+    },
+    "epidemic": {
+        "id": 432,
+        "parent": "disease"
+    },
+    "epilepsy": {
+        "id": 433,
+        "parent": "disease"
+    },
+    "gerd and acid reflux": {
+        "id": 434,
+        "parent": "disease"
+    },
+    "headaches and migraines": {
+        "id": 435,
+        "parent": "disease"
+    },
+    "heart disease": {
+        "id": 436,
+        "parent": "disease"
+    },
+    "ibs and crohn's disease": {
+        "id": 437,
+        "parent": "disease"
+    },
+    "incontinence": {
+        "id": 438,
+        "parent": "disease"
+    },
+    "infertility": {
+        "id": 439,
+        "parent": "disease"
+    },
+    "thyroid disease": {
+        "id": 440,
+        "parent": "disease"
+    },
+    "disorders": {
+        "id": 441,
+        "parent": "health and fitness"
+    },
+    "mental disorder": {
+        "id": 442,
+        "parent": "disorders"
+    },
+    "a.d.d.": {
+        "id": 443,
+        "parent": "mental disorder"
+    },
+    "bipolar disorder": {
+        "id": 444,
+        "parent": "mental disorder"
+    },
+    "depression": {
+        "id": 445,
+        "parent": "mental disorder"
+    },
+    "panic and anxiety": {
+        "id": 446,
+        "parent": "mental disorder"
+    },
+    "sleep disorders": {
+        "id": 447,
+        "parent": "disorders"
+    },
+    "drugs": {
+        "id": 448,
+        "parent": "health and fitness"
+    },
+    "exercise": {
+        "id": 449,
+        "parent": "health and fitness"
+    },
+    "incest and abuse support": {
+        "id": 450,
+        "parent": "health and fitness"
+    },
+    "men's health": {
+        "id": 451,
+        "parent": "health and fitness"
+    },
+    "nutrition": {
+        "id": 452,
+        "parent": "health and fitness"
+    },
+    "sexuality": {
+        "id": 453,
+        "parent": "health and fitness"
+    },
+    "sports medicine": {
+        "id": 454,
+        "parent": "health and fitness"
+    },
+    "therapy": {
+        "id": 455,
+        "parent": "health and fitness"
+    },
+    "physical therapy": {
+        "id": 456,
+        "parent": "therapy"
+    },
+    "weight loss": {
+        "id": 457,
+        "parent": "health and fitness"
+    },
+    "women's health": {
+        "id": 458,
+        "parent": "health and fitness"
+    },
+    "hobbies and interests": {
+        "id": 459
+    },
+    "art and technology": {
+        "id": 460,
+        "parent": "hobbies and interests"
+    },
+    "arts and crafts": {
+        "id": 461,
+        "parent": "hobbies and interests"
+    },
+    "beadwork": {
+        "id": 462,
+        "parent": "arts and crafts"
+    },
+    "candle and soap making": {
+        "id": 463,
+        "parent": "arts and crafts"
+    },
+    "crochet": {
+        "id": 464,
+        "parent": "arts and crafts"
+    },
+    "jewelry making": {
+        "id": 465,
+        "parent": "arts and crafts"
+    },
+    "knitting": {
+        "id": 466,
+        "parent": "arts and crafts"
+    },
+    "photography": {
+        "id": 467,
+        "parent": "arts and crafts"
+    },
+    "pottery": {
+        "id": 468,
+        "parent": "arts and crafts"
+    },
+    "watchmaking": {
+        "id": 469,
+        "parent": "arts and crafts"
+    },
+    "woodworking": {
+        "id": 470,
+        "parent": "arts and crafts"
+    },
+    "astrology": {
+        "id": 471,
+        "parent": "hobbies and interests"
+    },
+    "birdwatching": {
+        "id": 472,
+        "parent": "hobbies and interests"
+    },
+    "cigars": {
+        "id": 473,
+        "parent": "hobbies and interests"
+    },
+    "collecting": {
+        "id": 474,
+        "parent": "hobbies and interests"
+    },
+    "stamps and coins": {
+        "id": 475,
+        "parent": "collecting"
+    },
+    "games": {
+        "id": 476,
+        "parent": "hobbies and interests"
+    },
+    "board games and puzzles": {
+        "id": 477,
+        "parent": "games"
+    },
+    "card games": {
+        "id": 478,
+        "parent": "games"
+    },
+    "chess": {
+        "id": 479,
+        "parent": "games"
+    },
+    "gambling": {
+        "id": 480,
+        "parent": "games"
+    },
+    "lottery": {
+        "id": 481,
+        "parent": "games"
+    },
+    "role playing games": {
+        "id": 482,
+        "parent": "games"
+    },
+    "video and computer games": {
+        "id": 483,
+        "parent": "games"
+    },
+    "getting published": {
+        "id": 484,
+        "parent": "hobbies and interests"
+    },
+    "freelance writing": {
+        "id": 485,
+        "parent": "getting published"
+    },
+    "screenwriting": {
+        "id": 486,
+        "parent": "getting published"
+    },
+    "guitar": {
+        "id": 487,
+        "parent": "hobbies and interests"
+    },
+    "home recording": {
+        "id": 488,
+        "parent": "hobbies and interests"
+    },
+    "inventors and patents": {
+        "id": 489,
+        "parent": "hobbies and interests"
+    },
+    "magic and illusion": {
+        "id": 490,
+        "parent": "hobbies and interests"
+    },
+    "needlework": {
+        "id": 491,
+        "parent": "hobbies and interests"
+    },
+    "paranormal phenomena": {
+        "id": 492,
+        "parent": "hobbies and interests"
+    },
+    "occult": {
+        "id": 493,
+        "parent": "paranormal phenomena"
+    },
+    "parapsychology": {
+        "id": 494,
+        "parent": "paranormal phenomena"
+    },
+    "reading": {
+        "id": 495,
+        "parent": "hobbies and interests"
+    },
+    "scrapbooking": {
+        "id": 496,
+        "parent": "hobbies and interests"
+    },
+    "home and garden": {
+        "id": 497
+    },
+    "appliances": {
+        "id": 498,
+        "parent": "home and garden"
+    },
+    "dishwashers": {
+        "id": 499,
+        "parent": "appliances"
+    },
+    "microwaves": {
+        "id": 500,
+        "parent": "appliances"
+    },
+    "refrigerators and freezers": {
+        "id": 501,
+        "parent": "appliances"
+    },
+    "small appliances": {
+        "id": 502,
+        "parent": "appliances"
+    },
+    "blenders": {
+        "id": 503,
+        "parent": "small appliances"
+    },
+    "coffee maker": {
+        "id": 504,
+        "parent": "small appliances"
+    },
+    "food processors": {
+        "id": 505,
+        "parent": "small appliances"
+    },
+    "toasters and toaster ovens": {
+        "id": 506,
+        "parent": "small appliances"
+    },
+    "stoves": {
+        "id": 507,
+        "parent": "appliances"
+    },
+    "bed and bath": {
+        "id": 508,
+        "parent": "home and garden"
+    },
+    "bathroom": {
+        "id": 509,
+        "parent": "bed and bath"
+    },
+    "bedroom": {
+        "id": 510,
+        "parent": "bed and bath"
+    },
+    "bedding and bed linens": {
+        "id": 511,
+        "parent": "bedroom"
+    },
+    "beds and headboards": {
+        "id": 512,
+        "parent": "bedroom"
+    },
+    "mattresses": {
+        "id": 513,
+        "parent": "bedroom"
+    },
+    "environmental safety": {
+        "id": 514,
+        "parent": "home and garden"
+    },
+    "gardening and landscaping": {
+        "id": 515,
+        "parent": "home and garden"
+    },
+    "gardening": {
+        "id": 516,
+        "parent": "gardening and landscaping"
+    },
+    "landscaping": {
+        "id": 517,
+        "parent": "gardening and landscaping"
+    },
+    "yard and patio": {
+        "id": 518,
+        "parent": "gardening and landscaping"
+    },
+    "home furnishings": {
+        "id": 519,
+        "parent": "home and garden"
+    },
+    "lamps and lighting": {
+        "id": 520,
+        "parent": "home furnishings"
+    },
+    "rugs and carpets": {
+        "id": 521,
+        "parent": "home furnishings"
+    },
+    "sofas and chairs": {
+        "id": 522,
+        "parent": "home furnishings"
+    },
+    "home improvement and repair": {
+        "id": 523,
+        "parent": "home and garden"
+    },
+    "house painting and finishing": {
+        "id": 524,
+        "parent": "home improvement and repair"
+    },
+    "locks and locksmiths": {
+        "id": 525,
+        "parent": "home improvement and repair"
+    },
+    "plumbing": {
+        "id": 526,
+        "parent": "home improvement and repair"
+    },
+    "power tools": {
+        "id": 527,
+        "parent": "home improvement and repair"
+    },
+    "roofing": {
+        "id": 528,
+        "parent": "home improvement and repair"
+    },
+    "interior decorating": {
+        "id": 529,
+        "parent": "home and garden"
+    },
+    "laundry": {
+        "id": 530,
+        "parent": "home and garden"
+    },
+    "luxury homes": {
+        "id": 531,
+        "parent": "home and garden"
+    },
+    "nursery and playroom": {
+        "id": 532,
+        "parent": "home and garden"
+    },
+    "pest control": {
+        "id": 533,
+        "parent": "home and garden"
+    },
+    "remodeling and construction": {
+        "id": 534,
+        "parent": "home and garden"
+    },
+    "\"law": {
+        "id": 535
+    },
+    " govt and politics\"": {
+        "id": 536,
+        "parent": "\"law"
+    },
+    "armed forces": {
+        "id": 537,
+        "parent": " govt and politics\""
+    },
+    "air force": {
+        "id": 538,
+        "parent": "armed forces"
+    },
+    "army": {
+        "id": 539,
+        "parent": "armed forces"
+    },
+    "marines": {
+        "id": 540,
+        "parent": "armed forces"
+    },
+    "navy": {
+        "id": 541,
+        "parent": "armed forces"
+    },
+    "veterans": {
+        "id": 542,
+        "parent": "armed forces"
+    },
+    "commentary": {
+        "id": 543,
+        "parent": " govt and politics\""
+    },
+    "espionage and intelligence": {
+        "id": 544,
+        "parent": " govt and politics\""
+    },
+    "secret service": {
+        "id": 545,
+        "parent": "espionage and intelligence"
+    },
+    "surveillance": {
+        "id": 546,
+        "parent": "espionage and intelligence"
+    },
+    "terrorism": {
+        "id": 547,
+        "parent": "espionage and intelligence"
+    },
+    "government": {
+        "id": 548,
+        "parent": " govt and politics\""
+    },
+    "courts and judiciary": {
+        "id": 549,
+        "parent": "government"
+    },
+    "embassies and consulates": {
+        "id": 550,
+        "parent": "government"
+    },
+    "executive branch": {
+        "id": 551,
+        "parent": "government"
+    },
+    "government agencies": {
+        "id": 552,
+        "parent": "government"
+    },
+    "government contracting and procurement": {
+        "id": 553,
+        "parent": "government"
+    },
+    "heads of state": {
+        "id": 554,
+        "parent": "government"
+    },
+    "legislative": {
+        "id": 555,
+        "parent": "government"
+    },
+    "parliament": {
+        "id": 556,
+        "parent": "government"
+    },
+    "state and local government": {
+        "id": 557,
+        "parent": "government"
+    },
+    "immigration": {
+        "id": 558,
+        "parent": " govt and politics\""
+    },
+    "law enforcement": {
+        "id": 559,
+        "parent": " govt and politics\""
+    },
+    "coast guard": {
+        "id": 560,
+        "parent": "law enforcement"
+    },
+    "fire department": {
+        "id": 561,
+        "parent": "law enforcement"
+    },
+    "highway patrol": {
+        "id": 562,
+        "parent": "law enforcement"
+    },
+    "police": {
+        "id": 563,
+        "parent": "law enforcement"
+    },
+    "legal issues": {
+        "id": 564,
+        "parent": " govt and politics\""
+    },
+    "civil law": {
+        "id": 565,
+        "parent": "legal issues"
+    },
+    "copyright": {
+        "id": 566,
+        "parent": "civil law"
+    },
+    "civil rights": {
+        "id": 567,
+        "parent": "legal issues"
+    },
+    "civl rights": {
+        "id": 568,
+        "parent": "legal issues"
+    },
+    "privacy": {
+        "id": 569,
+        "parent": "civl rights"
+    },
+    "criminal law": {
+        "id": 570,
+        "parent": "legal issues"
+    },
+    "death penalty": {
+        "id": 571,
+        "parent": "legal issues"
+    },
+    "human rights": {
+        "id": 572,
+        "parent": "legal issues"
+    },
+    "international law": {
+        "id": 573,
+        "parent": "legal issues"
+    },
+    "legislation": {
+        "id": 574,
+        "parent": "legal issues"
+    },
+    "building laws": {
+        "id": 575,
+        "parent": "legislation"
+    },
+    "education laws": {
+        "id": 576,
+        "parent": "legislation"
+    },
+    "family laws": {
+        "id": 577,
+        "parent": "legislation"
+    },
+    "health care laws": {
+        "id": 578,
+        "parent": "legislation"
+    },
+    "immigration laws": {
+        "id": 579,
+        "parent": "legislation"
+    },
+    "tax laws": {
+        "id": 580,
+        "parent": "legislation"
+    },
+    "politics": {
+        "id": 581,
+        "parent": " govt and politics\""
+    },
+    "domestic policy": {
+        "id": 582,
+        "parent": "politics"
+    },
+    "elections": {
+        "id": 583,
+        "parent": "politics"
+    },
+    "local elections": {
+        "id": 584,
+        "parent": "elections"
+    },
+    "presidential elections": {
+        "id": 585,
+        "parent": "elections"
+    },
+    "referendums": {
+        "id": 586,
+        "parent": "elections"
+    },
+    "foreign policy": {
+        "id": 587,
+        "parent": "politics"
+    },
+    "lobbying": {
+        "id": 588,
+        "parent": "politics"
+    },
+    "political parties": {
+        "id": 589,
+        "parent": "politics"
+    },
+    "news": {
+        "id": 590
+    },
+    "international news": {
+        "id": 591,
+        "parent": "news"
+    },
+    "local news": {
+        "id": 592,
+        "parent": "news"
+    },
+    "national news": {
+        "id": 593,
+        "parent": "news"
+    },
+    "pets": {
+        "id": 594
+    },
+    "animal welfare": {
+        "id": 595,
+        "parent": "pets"
+    },
+    "aquariums": {
+        "id": 596,
+        "parent": "pets"
+    },
+    "birds": {
+        "id": 597,
+        "parent": "pets"
+    },
+    "cats": {
+        "id": 598,
+        "parent": "pets"
+    },
+    "dogs": {
+        "id": 599,
+        "parent": "pets"
+    },
+    "large animals": {
+        "id": 600,
+        "parent": "pets"
+    },
+    "reptiles": {
+        "id": 601,
+        "parent": "pets"
+    },
+    "zoo": {
+        "id": 602,
+        "parent": "pets"
+    },
+    "real estate": {
+        "id": 603
+    },
+    "apartments": {
+        "id": 604,
+        "parent": "real estate"
+    },
+    "architects": {
+        "id": 605,
+        "parent": "real estate"
+    },
+    "buying and selling homes": {
+        "id": 606,
+        "parent": "real estate"
+    },
+    "low income housing": {
+        "id": 607,
+        "parent": "real estate"
+    },
+    "religion and spirituality": {
+        "id": 608
+    },
+    "alternative religions": {
+        "id": 609,
+        "parent": "religion and spirituality"
+    },
+    "pagan and wiccan": {
+        "id": 610,
+        "parent": "alternative religions"
+    },
+    "atheism and agnosticism": {
+        "id": 611,
+        "parent": "religion and spirituality"
+    },
+    "buddhism": {
+        "id": 612,
+        "parent": "religion and spirituality"
+    },
+    "christianity": {
+        "id": 613,
+        "parent": "religion and spirituality"
+    },
+    "catholicism": {
+        "id": 614,
+        "parent": "christianity"
+    },
+    "latter-day saints": {
+        "id": 615,
+        "parent": "christianity"
+    },
+    "orthodoxy": {
+        "id": 616,
+        "parent": "christianity"
+    },
+    "protestantism": {
+        "id": 617,
+        "parent": "christianity"
+    },
+    "hinduism": {
+        "id": 618,
+        "parent": "religion and spirituality"
+    },
+    "islam": {
+        "id": 619,
+        "parent": "religion and spirituality"
+    },
+    "islamic fundamentalism": {
+        "id": 620,
+        "parent": "islam"
+    },
+    "judaism": {
+        "id": 621,
+        "parent": "religion and spirituality"
+    },
+    "science": {
+        "id": 622
+    },
+    "biology": {
+        "id": 623,
+        "parent": "science"
+    },
+    "biotechnology": {
+        "id": 624,
+        "parent": "biology"
+    },
+    "botany": {
+        "id": 625,
+        "parent": "biology"
+    },
+    "breeding": {
+        "id": 626,
+        "parent": "biology"
+    },
+    "cytology": {
+        "id": 627,
+        "parent": "biology"
+    },
+    "marine biology": {
+        "id": 628,
+        "parent": "biology"
+    },
+    "molecular biology": {
+        "id": 629,
+        "parent": "biology"
+    },
+    "zoology": {
+        "id": 630,
+        "parent": "biology"
+    },
+    "endangered species": {
+        "id": 631,
+        "parent": "zoology"
+    },
+    "entomology": {
+        "id": 632,
+        "parent": "zoology"
+    },
+    "ornithology": {
+        "id": 633,
+        "parent": "zoology"
+    },
+    "chemistry": {
+        "id": 634,
+        "parent": "science"
+    },
+    "organic chemistry": {
+        "id": 635,
+        "parent": "chemistry"
+    },
+    "computer science": {
+        "id": 636,
+        "parent": "science"
+    },
+    "artificial intelligence": {
+        "id": 637,
+        "parent": "computer science"
+    },
+    "cryptography": {
+        "id": 638,
+        "parent": "computer science"
+    },
+    "distributed systems": {
+        "id": 639,
+        "parent": "computer science"
+    },
+    "information science": {
+        "id": 640,
+        "parent": "computer science"
+    },
+    "software engineering": {
+        "id": 641,
+        "parent": "computer science"
+    },
+    "ecology": {
+        "id": 642,
+        "parent": "science"
+    },
+    "environmental disaster": {
+        "id": 643,
+        "parent": "ecology"
+    },
+    "pollution": {
+        "id": 644,
+        "parent": "ecology"
+    },
+    "waste management": {
+        "id": 645,
+        "parent": "ecology"
+    },
+    "recycling": {
+        "id": 646,
+        "parent": "waste management"
+    },
+    "waste disposal": {
+        "id": 647,
+        "parent": "waste management"
+    },
+    "engineering": {
+        "id": 648,
+        "parent": "science"
+    },
+    "geography": {
+        "id": 649,
+        "parent": "science"
+    },
+    "cartography": {
+        "id": 650,
+        "parent": "geography"
+    },
+    "topography": {
+        "id": 651,
+        "parent": "geography"
+    },
+    "geology": {
+        "id": 652,
+        "parent": "science"
+    },
+    "mineralogy": {
+        "id": 653,
+        "parent": "geology"
+    },
+    "seismology": {
+        "id": 654,
+        "parent": "geology"
+    },
+    "earthquakes": {
+        "id": 655,
+        "parent": "seismology"
+    },
+    "volcanology": {
+        "id": 656,
+        "parent": "geology"
+    },
+    "volcanic eruptions": {
+        "id": 657,
+        "parent": "volcanology"
+    },
+    "mathematics": {
+        "id": 658,
+        "parent": "science"
+    },
+    "algebra": {
+        "id": 659,
+        "parent": "mathematics"
+    },
+    "arithmetic": {
+        "id": 660,
+        "parent": "mathematics"
+    },
+    "geometry": {
+        "id": 661,
+        "parent": "mathematics"
+    },
+    "statistics": {
+        "id": 662,
+        "parent": "mathematics"
+    },
+    "medicine": {
+        "id": 663,
+        "parent": "science"
+    },
+    "cardiology": {
+        "id": 664,
+        "parent": "medicine"
+    },
+    "dermatology": {
+        "id": 665,
+        "parent": "medicine"
+    },
+    "embryology": {
+        "id": 666,
+        "parent": "medicine"
+    },
+    "genetics": {
+        "id": 667,
+        "parent": "medicine"
+    },
+    "immunology": {
+        "id": 668,
+        "parent": "medicine"
+    },
+    "medical research": {
+        "id": 669,
+        "parent": "medicine"
+    },
+    "oncology": {
+        "id": 670,
+        "parent": "medicine"
+    },
+    "orthopedics": {
+        "id": 671,
+        "parent": "medicine"
+    },
+    "pediatrics": {
+        "id": 672,
+        "parent": "medicine"
+    },
+    "pharmacology": {
+        "id": 673,
+        "parent": "medicine"
+    },
+    "physiology": {
+        "id": 674,
+        "parent": "medicine"
+    },
+    "psychology and psychiatry": {
+        "id": 675,
+        "parent": "medicine"
+    },
+    "psychoanalysis": {
+        "id": 676,
+        "parent": "psychology and psychiatry"
+    },
+    "surgery": {
+        "id": 677,
+        "parent": "medicine"
+    },
+    "cosmetic surgery": {
+        "id": 678,
+        "parent": "surgery"
+    },
+    "transplants": {
+        "id": 679,
+        "parent": "surgery"
+    },
+    "veterinary medicine": {
+        "id": 680,
+        "parent": "medicine"
+    },
+    "phyiscs": {
+        "id": 681,
+        "parent": "science"
+    },
+    "atomic physics": {
+        "id": 682,
+        "parent": "phyiscs"
+    },
+    "physics": {
+        "id": 683,
+        "parent": "science"
+    },
+    "astrophysics": {
+        "id": 684,
+        "parent": "physics"
+    },
+    "electromagnetism": {
+        "id": 685,
+        "parent": "physics"
+    },
+    "hydraulics": {
+        "id": 686,
+        "parent": "physics"
+    },
+    "nanotechnology": {
+        "id": 687,
+        "parent": "physics"
+    },
+    "optics": {
+        "id": 688,
+        "parent": "physics"
+    },
+    "space and astronomy": {
+        "id": 689,
+        "parent": "physics"
+    },
+    "thermodynamics": {
+        "id": 690,
+        "parent": "physics"
+    },
+    "social science": {
+        "id": 691,
+        "parent": "science"
+    },
+    "anthropology": {
+        "id": 692,
+        "parent": "social science"
+    },
+    "history": {
+        "id": 693,
+        "parent": "social science"
+    },
+    "ancient history": {
+        "id": 694,
+        "parent": "history"
+    },
+    "archaeology": {
+        "id": 695,
+        "parent": "history"
+    },
+    "genealogy": {
+        "id": 696,
+        "parent": "history"
+    },
+    "heraldry": {
+        "id": 697,
+        "parent": "history"
+    },
+    "medieval history": {
+        "id": 698,
+        "parent": "history"
+    },
+    "modern history": {
+        "id": 699,
+        "parent": "history"
+    },
+    "prehistory": {
+        "id": 700,
+        "parent": "history"
+    },
+    "linguistics": {
+        "id": 701,
+        "parent": "social science"
+    },
+    "translation": {
+        "id": 702,
+        "parent": "linguistics"
+    },
+    "pedagogy": {
+        "id": 703,
+        "parent": "social science"
+    },
+    "philosophy": {
+        "id": 704,
+        "parent": "social science"
+    },
+    "ethics": {
+        "id": 705,
+        "parent": "philosophy"
+    },
+    "sociology": {
+        "id": 706,
+        "parent": "social science"
+    },
+    "weather": {
+        "id": 707,
+        "parent": "science"
+    },
+    "meteorological disaster": {
+        "id": 708,
+        "parent": "weather"
+    },
+    "flood": {
+        "id": 709,
+        "parent": "meteorological disaster"
+    },
+    "hurricane": {
+        "id": 710,
+        "parent": "meteorological disaster"
+    },
+    "tornado": {
+        "id": 711,
+        "parent": "meteorological disaster"
+    },
+    "shopping": {
+        "id": 712
+    },
+    "auctions": {
+        "id": 713,
+        "parent": "shopping"
+    },
+    "classifieds": {
+        "id": 714,
+        "parent": "shopping"
+    },
+    "gifts": {
+        "id": 715,
+        "parent": "shopping"
+    },
+    "flowers": {
+        "id": 716,
+        "parent": "gifts"
+    },
+    "greeting cards": {
+        "id": 717,
+        "parent": "gifts"
+    },
+    "party supplies": {
+        "id": 718,
+        "parent": "gifts"
+    },
+    "resources": {
+        "id": 719,
+        "parent": "shopping"
+    },
+    "comparisons engines": {
+        "id": 720,
+        "parent": "resources"
+    },
+    "consumer protection": {
+        "id": 721,
+        "parent": "resources"
+    },
+    "contests and freebies": {
+        "id": 722,
+        "parent": "resources"
+    },
+    "coupons": {
+        "id": 723,
+        "parent": "resources"
+    },
+    "loyalty programs": {
+        "id": 724,
+        "parent": "resources"
+    },
+    "product reviews": {
+        "id": 725,
+        "parent": "resources"
+    },
+    "warranties and service contracts": {
+        "id": 726,
+        "parent": "resources"
+    },
+    "retail": {
+        "id": 727,
+        "parent": "shopping"
+    },
+    "department stores": {
+        "id": 728,
+        "parent": "retail"
+    },
+    "online stores": {
+        "id": 729,
+        "parent": "retail"
+    },
+    "outlet stores": {
+        "id": 730,
+        "parent": "retail"
+    },
+    "second-hand market": {
+        "id": 731,
+        "parent": "retail"
+    },
+    "wholesalers": {
+        "id": 732,
+        "parent": "retail"
+    },
+    "toys": {
+        "id": 733,
+        "parent": "shopping"
+    },
+    "action figures": {
+        "id": 734,
+        "parent": "toys"
+    },
+    "dolls": {
+        "id": 735,
+        "parent": "toys"
+    },
+    "puppets": {
+        "id": 736,
+        "parent": "toys"
+    },
+    "stuffed animals": {
+        "id": 737,
+        "parent": "toys"
+    },
+    "society": {
+        "id": 738
+    },
+    "crime": {
+        "id": 739,
+        "parent": "society"
+    },
+    "drug trafficking": {
+        "id": 740,
+        "parent": "crime"
+    },
+    "organized crime": {
+        "id": 741,
+        "parent": "crime"
+    },
+    "personal offense": {
+        "id": 742,
+        "parent": "crime"
+    },
+    "assault": {
+        "id": 743,
+        "parent": "personal offense"
+    },
+    "hate crime": {
+        "id": 744,
+        "parent": "personal offense"
+    },
+    "homicide": {
+        "id": 745,
+        "parent": "personal offense"
+    },
+    "human trafficking": {
+        "id": 746,
+        "parent": "personal offense"
+    },
+    "kidnapping": {
+        "id": 747,
+        "parent": "personal offense"
+    },
+    "torture": {
+        "id": 748,
+        "parent": "personal offense"
+    },
+    "property crime": {
+        "id": 749,
+        "parent": "crime"
+    },
+    "arson": {
+        "id": 750,
+        "parent": "property crime"
+    },
+    "bribery": {
+        "id": 751,
+        "parent": "property crime"
+    },
+    "burglary": {
+        "id": 752,
+        "parent": "property crime"
+    },
+    "embezzlement": {
+        "id": 753,
+        "parent": "property crime"
+    },
+    "fraud": {
+        "id": 754,
+        "parent": "property crime"
+    },
+    "larceny": {
+        "id": 755,
+        "parent": "property crime"
+    },
+    "piracy": {
+        "id": 756,
+        "parent": "property crime"
+    },
+    "robbery": {
+        "id": 757,
+        "parent": "property crime"
+    },
+    "smuggling": {
+        "id": 758,
+        "parent": "property crime"
+    },
+    "usury": {
+        "id": 759,
+        "parent": "property crime"
+    },
+    "sexual offence": {
+        "id": 760,
+        "parent": "crime"
+    },
+    "paedophilia": {
+        "id": 761,
+        "parent": "sexual offence"
+    },
+    "prostitution": {
+        "id": 762,
+        "parent": "sexual offence"
+    },
+    "rape": {
+        "id": 763,
+        "parent": "sexual offence"
+    },
+    "dating": {
+        "id": 764,
+        "parent": "society"
+    },
+    "gay life": {
+        "id": 765,
+        "parent": "society"
+    },
+    "racism": {
+        "id": 766,
+        "parent": "society"
+    },
+    "senior living": {
+        "id": 767,
+        "parent": "society"
+    },
+    "sex": {
+        "id": 768,
+        "parent": "society"
+    },
+    "pornography": {
+        "id": 769,
+        "parent": "sex"
+    },
+    "sex education": {
+        "id": 770,
+        "parent": "sex"
+    },
+    "social institution": {
+        "id": 771,
+        "parent": "society"
+    },
+    "divorce": {
+        "id": 772,
+        "parent": "social institution"
+    },
+    "marriage": {
+        "id": 773,
+        "parent": "social institution"
+    },
+    "common law marriage": {
+        "id": 774,
+        "parent": "marriage"
+    },
+    "weddings": {
+        "id": 775,
+        "parent": "marriage"
+    },
+    "teens": {
+        "id": 776,
+        "parent": "society"
+    },
+    "unrest and war": {
+        "id": 777,
+        "parent": "society"
+    },
+    "welfare": {
+        "id": 778,
+        "parent": "society"
+    },
+    "healthcare": {
+        "id": 779,
+        "parent": "welfare"
+    },
+    "hospital": {
+        "id": 780,
+        "parent": "healthcare"
+    },
+    "social services": {
+        "id": 781,
+        "parent": "welfare"
+    },
+    "volunteering": {
+        "id": 782,
+        "parent": "social services"
+    },
+    "work": {
+        "id": 783,
+        "parent": "society"
+    },
+    "contracts": {
+        "id": 784,
+        "parent": "work"
+    },
+    "retirement": {
+        "id": 785,
+        "parent": "work"
+    },
+    "unemployment": {
+        "id": 786,
+        "parent": "work"
+    },
+    "unions": {
+        "id": 787,
+        "parent": "work"
+    },
+    "sports": {
+        "id": 788
+    },
+    "archery": {
+        "id": 789,
+        "parent": "sports"
+    },
+    "auto racing": {
+        "id": 790,
+        "parent": "sports"
+    },
+    "nascar": {
+        "id": 791,
+        "parent": "auto racing"
+    },
+    "rally": {
+        "id": 792,
+        "parent": "auto racing"
+    },
+    "badminton": {
+        "id": 793,
+        "parent": "sports"
+    },
+    "baseball": {
+        "id": 794,
+        "parent": "sports"
+    },
+    "basketball": {
+        "id": 795,
+        "parent": "sports"
+    },
+    "bicycling": {
+        "id": 796,
+        "parent": "sports"
+    },
+    "mountain biking": {
+        "id": 797,
+        "parent": "bicycling"
+    },
+    "billiards": {
+        "id": 798,
+        "parent": "sports"
+    },
+    "boat racing": {
+        "id": 799,
+        "parent": "sports"
+    },
+    "bobsled": {
+        "id": 800,
+        "parent": "sports"
+    },
+    "bodybuilding": {
+        "id": 801,
+        "parent": "sports"
+    },
+    "bowling": {
+        "id": 802,
+        "parent": "sports"
+    },
+    "boxing": {
+        "id": 803,
+        "parent": "sports"
+    },
+    "canoeing and kayaking": {
+        "id": 804,
+        "parent": "sports"
+    },
+    "cheerleading": {
+        "id": 805,
+        "parent": "sports"
+    },
+    "climbing": {
+        "id": 806,
+        "parent": "sports"
+    },
+    "mountain climbing": {
+        "id": 807,
+        "parent": "climbing"
+    },
+    "rock climbing": {
+        "id": 808,
+        "parent": "climbing"
+    },
+    "cricket": {
+        "id": 809,
+        "parent": "sports"
+    },
+    "curling": {
+        "id": 810,
+        "parent": "sports"
+    },
+    "diving": {
+        "id": 811,
+        "parent": "sports"
+    },
+    "dog sled": {
+        "id": 812,
+        "parent": "sports"
+    },
+    "fencing": {
+        "id": 813,
+        "parent": "sports"
+    },
+    "fishing": {
+        "id": 814,
+        "parent": "sports"
+    },
+    "fly fishing": {
+        "id": 815,
+        "parent": "fishing"
+    },
+    "freshwater fishing": {
+        "id": 816,
+        "parent": "fishing"
+    },
+    "saltwater fishing": {
+        "id": 817,
+        "parent": "fishing"
+    },
+    "sport fishing": {
+        "id": 818,
+        "parent": "fishing"
+    },
+    "football": {
+        "id": 819,
+        "parent": "sports"
+    },
+    "go kart": {
+        "id": 820,
+        "parent": "sports"
+    },
+    "golf": {
+        "id": 821,
+        "parent": "sports"
+    },
+    "gymnastics": {
+        "id": 822,
+        "parent": "sports"
+    },
+    "calisthenics": {
+        "id": 823,
+        "parent": "gymnastics"
+    },
+    "handball": {
+        "id": 824,
+        "parent": "sports"
+    },
+    "hockey": {
+        "id": 825,
+        "parent": "sports"
+    },
+    "field hockey": {
+        "id": 826,
+        "parent": "hockey"
+    },
+    "horse racing": {
+        "id": 827,
+        "parent": "sports"
+    },
+    "horses": {
+        "id": 828,
+        "parent": "sports"
+    },
+    "hunting and shooting": {
+        "id": 829,
+        "parent": "sports"
+    },
+    "skeet shooting": {
+        "id": 830,
+        "parent": "hunting and shooting"
+    },
+    "target shooting": {
+        "id": 831,
+        "parent": "hunting and shooting"
+    },
+    "martial arts": {
+        "id": 832,
+        "parent": "sports"
+    },
+    "judo": {
+        "id": 833,
+        "parent": "martial arts"
+    },
+    "karate": {
+        "id": 834,
+        "parent": "martial arts"
+    },
+    "sumo": {
+        "id": 835,
+        "parent": "martial arts"
+    },
+    "motorcycling": {
+        "id": 836,
+        "parent": "sports"
+    },
+    "olympics": {
+        "id": 837,
+        "parent": "sports"
+    },
+    "paralympic games": {
+        "id": 838,
+        "parent": "olympics"
+    },
+    "paintball": {
+        "id": 839,
+        "parent": "sports"
+    },
+    "parachuting": {
+        "id": 840,
+        "parent": "sports"
+    },
+    "polo": {
+        "id": 841,
+        "parent": "sports"
+    },
+    "rodeo": {
+        "id": 842,
+        "parent": "sports"
+    },
+    "rowing": {
+        "id": 843,
+        "parent": "sports"
+    },
+    "rugby": {
+        "id": 844,
+        "parent": "sports"
+    },
+    "running and jogging": {
+        "id": 845,
+        "parent": "sports"
+    },
+    "sailing": {
+        "id": 846,
+        "parent": "sports"
+    },
+    "scuba diving": {
+        "id": 847,
+        "parent": "sports"
+    },
+    "skateboarding": {
+        "id": 848,
+        "parent": "sports"
+    },
+    "skating": {
+        "id": 849,
+        "parent": "sports"
+    },
+    "figure skating": {
+        "id": 850,
+        "parent": "skating"
+    },
+    "ice skating": {
+        "id": 851,
+        "parent": "skating"
+    },
+    "roller skating": {
+        "id": 852,
+        "parent": "skating"
+    },
+    "skiing": {
+        "id": 853,
+        "parent": "sports"
+    },
+    "downhill skiing": {
+        "id": 854,
+        "parent": "skiing"
+    },
+    "nordic skiing": {
+        "id": 855,
+        "parent": "skiing"
+    },
+    "waterskiing": {
+        "id": 856,
+        "parent": "skiing"
+    },
+    "snowboarding": {
+        "id": 857,
+        "parent": "sports"
+    },
+    "soccer": {
+        "id": 858,
+        "parent": "sports"
+    },
+    "softball": {
+        "id": 859,
+        "parent": "sports"
+    },
+    "sports news": {
+        "id": 860,
+        "parent": "sports"
+    },
+    "surfing and bodyboarding": {
+        "id": 861,
+        "parent": "sports"
+    },
+    "swimming": {
+        "id": 862,
+        "parent": "sports"
+    },
+    "table tennis and ping-pong": {
+        "id": 863,
+        "parent": "sports"
+    },
+    "tennis": {
+        "id": 864,
+        "parent": "sports"
+    },
+    "trekking": {
+        "id": 865,
+        "parent": "sports"
+    },
+    "volleyball": {
+        "id": 866,
+        "parent": "sports"
+    },
+    "beach volleyball": {
+        "id": 867,
+        "parent": "volleyball"
+    },
+    "wakeboarding": {
+        "id": 868,
+        "parent": "sports"
+    },
+    "walking": {
+        "id": 869,
+        "parent": "sports"
+    },
+    "water polo": {
+        "id": 870,
+        "parent": "sports"
+    },
+    "weightlifting": {
+        "id": 871,
+        "parent": "sports"
+    },
+    "windsurfing": {
+        "id": 872,
+        "parent": "sports"
+    },
+    "wrestling": {
+        "id": 873,
+        "parent": "sports"
+    },
+    "style and fashion": {
+        "id": 874
+    },
+    "accessories": {
+        "id": 875,
+        "parent": "style and fashion"
+    },
+    "backpacks": {
+        "id": 876,
+        "parent": "accessories"
+    },
+    "gloves": {
+        "id": 877,
+        "parent": "accessories"
+    },
+    "hats": {
+        "id": 878,
+        "parent": "accessories"
+    },
+    "scarves": {
+        "id": 879,
+        "parent": "accessories"
+    },
+    "socks": {
+        "id": 880,
+        "parent": "accessories"
+    },
+    "sunglasses": {
+        "id": 881,
+        "parent": "accessories"
+    },
+    "ties": {
+        "id": 882,
+        "parent": "accessories"
+    },
+    "wallets": {
+        "id": 883,
+        "parent": "accessories"
+    },
+    "watches": {
+        "id": 884,
+        "parent": "accessories"
+    },
+    "beauty": {
+        "id": 885,
+        "parent": "style and fashion"
+    },
+    "cologne": {
+        "id": 886,
+        "parent": "beauty"
+    },
+    "cosmetics": {
+        "id": 887,
+        "parent": "beauty"
+    },
+    "eyeshadow": {
+        "id": 888,
+        "parent": "cosmetics"
+    },
+    "lipstick": {
+        "id": 889,
+        "parent": "cosmetics"
+    },
+    "nail polish": {
+        "id": 890,
+        "parent": "cosmetics"
+    },
+    "cosmetology and beauty professionals": {
+        "id": 891,
+        "parent": "beauty"
+    },
+    "face and body care": {
+        "id": 892,
+        "parent": "beauty"
+    },
+    "body care": {
+        "id": 893,
+        "parent": "face and body care"
+    },
+    "hygiene and toiletries": {
+        "id": 894,
+        "parent": "face and body care"
+    },
+    "nail care": {
+        "id": 895,
+        "parent": "face and body care"
+    },
+    "hair care": {
+        "id": 896,
+        "parent": "beauty"
+    },
+    "perfume": {
+        "id": 897,
+        "parent": "beauty"
+    },
+    "tattoos": {
+        "id": 898,
+        "parent": "beauty"
+    },
+    "body art": {
+        "id": 899,
+        "parent": "style and fashion"
+    },
+    "clothing": {
+        "id": 900,
+        "parent": "style and fashion"
+    },
+    "blazers": {
+        "id": 901,
+        "parent": "clothing"
+    },
+    "coats": {
+        "id": 902,
+        "parent": "clothing"
+    },
+    "hoodies": {
+        "id": 903,
+        "parent": "clothing"
+    },
+    "jackets": {
+        "id": 904,
+        "parent": "clothing"
+    },
+    "leggings": {
+        "id": 905,
+        "parent": "clothing"
+    },
+    "lingerie": {
+        "id": 906,
+        "parent": "clothing"
+    },
+    "pajamas": {
+        "id": 907,
+        "parent": "clothing"
+    },
+    "pants": {
+        "id": 908,
+        "parent": "clothing"
+    },
+    "jeans": {
+        "id": 909,
+        "parent": "pants"
+    },
+    "petticoats": {
+        "id": 910,
+        "parent": "clothing"
+    },
+    "shirts": {
+        "id": 911,
+        "parent": "clothing"
+    },
+    "shorts": {
+        "id": 912,
+        "parent": "clothing"
+    },
+    "skirts": {
+        "id": 913,
+        "parent": "clothing"
+    },
+    "sweaters": {
+        "id": 914,
+        "parent": "clothing"
+    },
+    "wedding dresses": {
+        "id": 915,
+        "parent": "clothing"
+    },
+    "fashion designers": {
+        "id": 916,
+        "parent": "style and fashion"
+    },
+    "footwear": {
+        "id": 917,
+        "parent": "style and fashion"
+    },
+    "boots": {
+        "id": 918,
+        "parent": "footwear"
+    },
+    "sandals": {
+        "id": 919,
+        "parent": "footwear"
+    },
+    "shoes": {
+        "id": 920,
+        "parent": "footwear"
+    },
+    "slippers": {
+        "id": 921,
+        "parent": "footwear"
+    },
+    "sneakers": {
+        "id": 922,
+        "parent": "footwear"
+    },
+    "jewelry": {
+        "id": 923,
+        "parent": "style and fashion"
+    },
+    "bracelets": {
+        "id": 924,
+        "parent": "jewelry"
+    },
+    "earrings": {
+        "id": 925,
+        "parent": "jewelry"
+    },
+    "necklaces": {
+        "id": 926,
+        "parent": "jewelry"
+    },
+    "rings": {
+        "id": 927,
+        "parent": "jewelry"
+    },
+    "luxury goods": {
+        "id": 928,
+        "parent": "style and fashion"
+    },
+    "men 's fashion": {
+        "id": 929,
+        "parent": "style and fashion"
+    },
+    "swimwear": {
+        "id": 930,
+        "parent": "style and fashion"
+    },
+    "bikinis": {
+        "id": 931,
+        "parent": "swimwear"
+    },
+    "underwear": {
+        "id": 932,
+        "parent": "style and fashion"
+    },
+    "technology and computing": {
+        "id": 933
+    },
+    "computer certification": {
+        "id": 934,
+        "parent": "technology and computing"
+    },
+    "computer crime": {
+        "id": 935,
+        "parent": "technology and computing"
+    },
+    "computer reviews": {
+        "id": 936,
+        "parent": "technology and computing"
+    },
+    "computer security": {
+        "id": 937,
+        "parent": "technology and computing"
+    },
+    "antivirus and malware": {
+        "id": 938,
+        "parent": "computer security"
+    },
+    "network security": {
+        "id": 939,
+        "parent": "computer security"
+    },
+    "consumer electronics": {
+        "id": 940,
+        "parent": "technology and computing"
+    },
+    "audio equipment": {
+        "id": 941,
+        "parent": "consumer electronics"
+    },
+    "headphones": {
+        "id": 942,
+        "parent": "audio equipment"
+    },
+    "speakers": {
+        "id": 943,
+        "parent": "audio equipment"
+    },
+    "stereo systems and components": {
+        "id": 944,
+        "parent": "audio equipment"
+    },
+    "camera and photo equipment": {
+        "id": 945,
+        "parent": "consumer electronics"
+    },
+    "binoculars": {
+        "id": 946,
+        "parent": "camera and photo equipment"
+    },
+    "cameras and camcorders": {
+        "id": 947,
+        "parent": "camera and photo equipment"
+    },
+    "camcorders\r": {
+        "id": 948,
+        "parent": "cameras and camcorders"
+    },
+    "camera bags\r": {
+        "id": 949,
+        "parent": "cameras and camcorders"
+    },
+    "camera batteries\r": {
+        "id": 950,
+        "parent": "cameras and camcorders"
+    },
+    "camera lenses\r": {
+        "id": 951,
+        "parent": "cameras and camcorders"
+    },
+    "cameras\r": {
+        "id": 952,
+        "parent": "cameras and camcorders"
+    },
+    "telescopes": {
+        "id": 953,
+        "parent": "camera and photo equipment"
+    },
+    "ebook reader": {
+        "id": 954,
+        "parent": "consumer electronics"
+    },
+    "game systems and consoles": {
+        "id": 955,
+        "parent": "consumer electronics"
+    },
+    "nintendo": {
+        "id": 956,
+        "parent": "game systems and consoles"
+    },
+    "playstation": {
+        "id": 957,
+        "parent": "game systems and consoles"
+    },
+    "xbox": {
+        "id": 958,
+        "parent": "game systems and consoles"
+    },
+    "home video and dvd": {
+        "id": 959,
+        "parent": "consumer electronics"
+    },
+    "portable entertainment": {
+        "id": 960,
+        "parent": "consumer electronics"
+    },
+    "radios": {
+        "id": 961,
+        "parent": "consumer electronics"
+    },
+    "telephones": {
+        "id": 962,
+        "parent": "consumer electronics"
+    },
+    "mobile phones": {
+        "id": 963,
+        "parent": "telephones"
+    },
+    "smart phones\r": {
+        "id": 964,
+        "parent": "mobile phones"
+    },
+    "tv and video equipment": {
+        "id": 965,
+        "parent": "consumer electronics"
+    },
+    "dvrs and set-top boxes": {
+        "id": 966,
+        "parent": "tv and video equipment"
+    },
+    "home theater systems": {
+        "id": 967,
+        "parent": "tv and video equipment"
+    },
+    "projectors": {
+        "id": 968,
+        "parent": "tv and video equipment"
+    },
+    "televisions": {
+        "id": 969,
+        "parent": "tv and video equipment"
+    },
+    "hdtvs\r": {
+        "id": 970,
+        "parent": "televisions"
+    },
+    "lcd tvs\r": {
+        "id": 971,
+        "parent": "televisions"
+    },
+    "plasma tvs\r": {
+        "id": 972,
+        "parent": "televisions"
+    },
+    "video players and recorders": {
+        "id": 973,
+        "parent": "tv and video equipment"
+    },
+    "blu-ray players and recorders\r": {
+        "id": 974,
+        "parent": "video players and recorders"
+    },
+    "dvd players and recorders\r": {
+        "id": 975,
+        "parent": "video players and recorders"
+    },
+    "data centers": {
+        "id": 976,
+        "parent": "technology and computing"
+    },
+    "electronic components": {
+        "id": 977,
+        "parent": "technology and computing"
+    },
+    "enterprise technology": {
+        "id": 978,
+        "parent": "technology and computing"
+    },
+    "customer relationship management": {
+        "id": 979,
+        "parent": "enterprise technology"
+    },
+    "data management": {
+        "id": 980,
+        "parent": "enterprise technology"
+    },
+    "enterprise resource planning": {
+        "id": 981,
+        "parent": "enterprise technology"
+    },
+    "hardware": {
+        "id": 982,
+        "parent": "technology and computing"
+    },
+    "computer": {
+        "id": 983,
+        "parent": "hardware"
+    },
+    "desktop computer": {
+        "id": 984,
+        "parent": "computer"
+    },
+    "portable computer": {
+        "id": 985,
+        "parent": "computer"
+    },
+    "laptop\r": {
+        "id": 986,
+        "parent": "portable computer"
+    },
+    "palmtops and pdas\r": {
+        "id": 987,
+        "parent": "portable computer"
+    },
+    "tablet\r": {
+        "id": 988,
+        "parent": "portable computer"
+    },
+    "servers": {
+        "id": 989,
+        "parent": "computer"
+    },
+    "computer components": {
+        "id": 990,
+        "parent": "hardware"
+    },
+    "chips and processors": {
+        "id": 991,
+        "parent": "computer components"
+    },
+    "disks": {
+        "id": 992,
+        "parent": "computer components"
+    },
+    "graphics cards": {
+        "id": 993,
+        "parent": "computer components"
+    },
+    "memory": {
+        "id": 994,
+        "parent": "computer components"
+    },
+    "portable\r": {
+        "id": 995,
+        "parent": "memory"
+    },
+    "motherboards": {
+        "id": 996,
+        "parent": "computer components"
+    },
+    "sound cards": {
+        "id": 997,
+        "parent": "computer components"
+    },
+    "computer networking": {
+        "id": 998,
+        "parent": "hardware"
+    },
+    "router": {
+        "id": 999,
+        "parent": "computer networking"
+    },
+    "wireless technology": {
+        "id": 1000,
+        "parent": "computer networking"
+    },
+    "computer peripherals": {
+        "id": 1001,
+        "parent": "hardware"
+    },
+    "computer monitors": {
+        "id": 1002,
+        "parent": "computer peripherals"
+    },
+    "\"printers": {
+        "id": 1003,
+        "parent": "computer peripherals"
+    },
+    " copiers and fax\"": {
+        "id": 1004,
+        "parent": "\"printers"
+    },
+    "copiers\r": {
+        "id": 1005,
+        "parent": " copiers and fax\""
+    },
+    "fax machines\r": {
+        "id": 1006,
+        "parent": " copiers and fax\""
+    },
+    "printers\r": {
+        "id": 1007,
+        "parent": " copiers and fax\""
+    },
+    "scanners\r": {
+        "id": 1008,
+        "parent": " copiers and fax\""
+    },
+    "internet technology": {
+        "id": 1009,
+        "parent": "technology and computing"
+    },
+    "chat": {
+        "id": 1010,
+        "parent": "internet technology"
+    },
+    "ecommerce": {
+        "id": 1011,
+        "parent": "internet technology"
+    },
+    "email": {
+        "id": 1012,
+        "parent": "internet technology"
+    },
+    "internet cafes": {
+        "id": 1013,
+        "parent": "internet technology"
+    },
+    "isps": {
+        "id": 1014,
+        "parent": "internet technology"
+    },
+    "social network": {
+        "id": 1015,
+        "parent": "internet technology"
+    },
+    "web clip art": {
+        "id": 1016,
+        "parent": "internet technology"
+    },
+    "web design and html": {
+        "id": 1017,
+        "parent": "internet technology"
+    },
+    "web search": {
+        "id": 1018,
+        "parent": "internet technology"
+    },
+    "people search": {
+        "id": 1019,
+        "parent": "web search"
+    },
+    "mp3 and midi": {
+        "id": 1020,
+        "parent": "technology and computing"
+    },
+    "networking": {
+        "id": 1021,
+        "parent": "technology and computing"
+    },
+    "network monitoring and management": {
+        "id": 1022,
+        "parent": "networking"
+    },
+    "vpn and remote access": {
+        "id": 1023,
+        "parent": "networking"
+    },
+    "operating systems": {
+        "id": 1024,
+        "parent": "technology and computing"
+    },
+    "linux": {
+        "id": 1025,
+        "parent": "operating systems"
+    },
+    "mac os": {
+        "id": 1026,
+        "parent": "operating systems"
+    },
+    "unix": {
+        "id": 1027,
+        "parent": "operating systems"
+    },
+    "windows": {
+        "id": 1028,
+        "parent": "operating systems"
+    },
+    "programming languages": {
+        "id": 1029,
+        "parent": "technology and computing"
+    },
+    "c and c++": {
+        "id": 1030,
+        "parent": "programming languages"
+    },
+    "java": {
+        "id": 1031,
+        "parent": "programming languages"
+    },
+    "javascript": {
+        "id": 1032,
+        "parent": "programming languages"
+    },
+    "visual basic": {
+        "id": 1033,
+        "parent": "programming languages"
+    },
+    "software": {
+        "id": 1034,
+        "parent": "technology and computing"
+    },
+    "databases": {
+        "id": 1035,
+        "parent": "software"
+    },
+    "desktop publishing": {
+        "id": 1036,
+        "parent": "software"
+    },
+    "desktop video": {
+        "id": 1037,
+        "parent": "software"
+    },
+    "graphics software": {
+        "id": 1038,
+        "parent": "software"
+    },
+    "animation": {
+        "id": 1039,
+        "parent": "graphics software"
+    },
+    "net conferencing": {
+        "id": 1040,
+        "parent": "software"
+    },
+    "shareware and freeware": {
+        "id": 1041,
+        "parent": "software"
+    },
+    "tech news": {
+        "id": 1042,
+        "parent": "technology and computing"
+    },
+    "technical support": {
+        "id": 1043,
+        "parent": "technology and computing"
+    },
+    "technological innovation": {
+        "id": 1044,
+        "parent": "technology and computing"
+    },
+    "travel": {
+        "id": 1045
+    },
+    "budget travel": {
+        "id": 1046,
+        "parent": "travel"
+    },
+    "business travel": {
+        "id": 1047,
+        "parent": "travel"
+    },
+    "honeymoons and getaways": {
+        "id": 1048,
+        "parent": "travel"
+    },
+    "hotels": {
+        "id": 1049,
+        "parent": "travel"
+    },
+    "specialty travel": {
+        "id": 1050,
+        "parent": "travel"
+    },
+    "adventure travel": {
+        "id": 1051,
+        "parent": "specialty travel"
+    },
+    "ecotourism": {
+        "id": 1052,
+        "parent": "specialty travel"
+    },
+    "sightseeing tours": {
+        "id": 1053,
+        "parent": "specialty travel"
+    },
+    "vineyards": {
+        "id": 1054,
+        "parent": "specialty travel"
+    },
+    "tourist destinations": {
+        "id": 1055,
+        "parent": "travel"
+    },
+    "africa": {
+        "id": 1056,
+        "parent": "tourist destinations"
+    },
+    "australia and new zealand": {
+        "id": 1057,
+        "parent": "tourist destinations"
+    },
+    "canada": {
+        "id": 1058,
+        "parent": "tourist destinations"
+    },
+    "caribbean": {
+        "id": 1059,
+        "parent": "tourist destinations"
+    },
+    "eastern europe": {
+        "id": 1060,
+        "parent": "tourist destinations"
+    },
+    "europe": {
+        "id": 1061,
+        "parent": "tourist destinations"
+    },
+    "france": {
+        "id": 1062,
+        "parent": "tourist destinations"
+    },
+    "greece": {
+        "id": 1063,
+        "parent": "tourist destinations"
+    },
+    "italy": {
+        "id": 1064,
+        "parent": "tourist destinations"
+    },
+    "japan": {
+        "id": 1065,
+        "parent": "tourist destinations"
+    },
+    "mexico and central america": {
+        "id": 1066,
+        "parent": "tourist destinations"
+    },
+    "national parks": {
+        "id": 1067,
+        "parent": "tourist destinations"
+    },
+    "seaside resort": {
+        "id": 1068,
+        "parent": "tourist destinations"
+    },
+    "ski resorts": {
+        "id": 1069,
+        "parent": "tourist destinations"
+    },
+    "south america": {
+        "id": 1070,
+        "parent": "tourist destinations"
+    },
+    "spas": {
+        "id": 1071,
+        "parent": "tourist destinations"
+    },
+    "theme parks": {
+        "id": 1072,
+        "parent": "tourist destinations"
+    },
+    "united kingdom": {
+        "id": 1073,
+        "parent": "tourist destinations"
+    },
+    "tourist facilities": {
+        "id": 1074,
+        "parent": "travel"
+    },
+    "bed and breakfast": {
+        "id": 1075,
+        "parent": "tourist facilities"
+    },
+    "camping": {
+        "id": 1076,
+        "parent": "tourist facilities"
+    },
+    "hotel": {
+        "id": 1077,
+        "parent": "tourist facilities"
+    },
+    "transports": {
+        "id": 1078,
+        "parent": "travel"
+    },
+    "air travel": {
+        "id": 1079,
+        "parent": "transports"
+    },
+    "air and space accident": {
+        "id": 1080,
+        "parent": "air travel"
+    },
+    "airfare": {
+        "id": 1081,
+        "parent": "air travel"
+    },
+    "airlines": {
+        "id": 1082,
+        "parent": "air travel"
+    },
+    "airplanes": {
+        "id": 1083,
+        "parent": "air travel"
+    },
+    "airports": {
+        "id": 1084,
+        "parent": "air travel"
+    },
+    "helicopters": {
+        "id": 1085,
+        "parent": "air travel"
+    },
+    "public transport": {
+        "id": 1086,
+        "parent": "transports"
+    },
+    "road travel": {
+        "id": 1087,
+        "parent": "transports"
+    },
+    "road accident": {
+        "id": 1088,
+        "parent": "road travel"
+    },
+    "sea travel": {
+        "id": 1089,
+        "parent": "transports"
+    },
+    "cruises": {
+        "id": 1090,
+        "parent": "sea travel"
+    },
+    "train travel": {
+        "id": 1091,
+        "parent": "transports"
+    },
+    "travel agencies": {
+        "id": 1092,
+        "parent": "travel"
+    },
+    "travel guides": {
+        "id": 1093,
+        "parent": "travel"
+    },
+    "traveling with kids": {
+        "id": 1094,
+        "parent": "travel"
+    },
+    "vacation rentals": {
+        "id": 1095,
+        "parent": "travel"
+    }
+}

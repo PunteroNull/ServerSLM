@@ -20,7 +20,7 @@ exports.feedback = function(input, callback) {
     var categories = input.categories;
     var keywords = input.keywords
     var note = input.note;
-    MongoClient.connect(url, function(err, db) {
+    MongoClient.connect(ConfigServer.mongo.url, function(err, db) {
         var collection = db.collection('newkeywords');
 
         function prepareCategories(category, cb) {

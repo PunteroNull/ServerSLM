@@ -1,32 +1,35 @@
 var AlchemyAPI = require('../../alchemyapi.js');
 var alchemyHelper = require('./alchemy.helper.js');
+var categoryController = require('../category/category.controller.js');
 
-exports.analyzeText = function(text, cb) { //Analiza texto, luego envia un mail con un codigo y guarda los resultados
+exports.analyzeText = function(username, text, cb) { //Analiza texto, luego envia un mail con un codigo y guarda los resultados
     var code = alchemyHelper.makeRandomCode();
     var alchemyapi = new AlchemyAPI();
-    alchemyapi.taxonomy('text', text, {
-        'sentiment': 0
-    }, function(response) {
+    alchemyapi.taxonomy('text', text, {'sentiment': 0}, function(response) {
         var tax = response;
         alchemyapi.keywords('text', text, {'sentiment': 0, "keywordExtractMode": "strict", "outputMode": "json", "maxRetrieve": 20 }, function(response) {
             processData({"taxonomy": tax, "keywords": response}, function(result) {
                 alchemyHelper.sendCode(code);
-                alchemyHelper.saveResult(result, code);
+                alchemyHelper.saveResult(username, result, code);
+                if(result.finalResp)
+                    categoryController.saveRelations(result.finalResp);
             });
         });
     });
 };
 
-exports.analyzeMultipleText = function(textUser, textsFriends, cb) { //Analiza el texto del usuario y de los usuarios que sigue, luego envia un mail con un codigo y guarda los resultados (Incompleto)
+exports.analyzeMultipleText = function(username, textUser, textsFriends, cb) { //Analiza el texto del usuario y de los usuarios que sigue, luego envia un mail con un codigo y guarda los resultados (Incompleto)
     var code = alchemyHelper.makeRandomCode();
     alchemyProccessText(textUser, function(err, processedUser) {
-        async.mapSeries(textsFriends, alchemyProccessText, function(err, processedFriends) {
+        async.mapLimit(textsFriends, 3, alchemyProccessText, function(err, processedFriends) {
             if (err) {
                 return console.log(err);
             } else {
                 processMultipleData(processedUser, processedFriends, function(result) {
                     alchemyHelper.sendCode(code);
-                    alchemyHelper.saveResult(result, code);
+                    alchemyHelper.saveResult(username, result, code);
+                    if(result.finalResp)
+                        categoryController.saveRelations(result.finalResp);
                 });
             }
         })
@@ -38,10 +41,10 @@ function alchemyProccessText(text, cb) {
     alchemyapi.taxonomy('text', text, {'sentiment': 0}, function(response) {
         var tax = response;
         if (response.status == "ERROR")
-            console.log("FALLO TAX");
+            console.log(response);
         alchemyapi.keywords('text', text, {'sentiment': 0, "keywordExtractMode": "strict", "outputMode": "json", "maxRetrieve": 20}, function(response) {
             if (response.status == "ERROR")
-                console.log("FALLO KEY");
+                console.log(response);
             cb(null, {"taxonomy": tax,"keywords": response});
         });
     });
