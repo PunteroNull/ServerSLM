@@ -41,6 +41,20 @@
             ]
         }
     },
+    "/twitterWithFollowingCached": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "analyzeFollowingCached",
+            "valid":[
+                {
+                    "name":"name",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
     "/feedback": {
         "method": ["POST"],
         "POST": {

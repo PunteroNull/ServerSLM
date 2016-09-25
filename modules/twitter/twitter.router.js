@@ -1,5 +1,6 @@
 var twitterController = require('./twitter.controller');
 var alchemyController = require('../alchemy/alchemy.controller');
+var result = require('../result/result.controller')
 var message = require('../../common/messages.json');
 
 exports.analyze = function(req, res, next) {
@@ -36,15 +37,13 @@ exports.analyzeFollowing = function(req, res, next) {
 
 exports.analyzeFollowingCached = function(req, res, next) {
     var username = req.query.name;
-    res.sender({"status":200, "message":"test"});
-    next();
-    // async.waterfall([
-    //     function(cb){
-    //         cacheController.analizeUser(username, function(response) {
-    //
-    //         })
-    //     }
-    // ], function(err,result){
-    //
-    // })
+    var that = this;
+    result.getResultByUser(username, function(err, resp){
+        if(!err && resp && !_.isEmpty(resp)){
+            res.sender(resp);
+            return next();
+        } else {
+            that.analyzeFollowing(req, res, next)
+        }
+    })
 };

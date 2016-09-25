@@ -16,6 +16,23 @@ exports.getResult = function(code, cb) {
     });
 };
 
+exports.getResultByUser = function(username, cb) {
+    MongoClient.connect(ConfigServer.mongo.url, function(err, db) {
+        if (err)
+            return cb(err);
+        var maxDay = moment().subtract(ConfigServer.values.maxDaysCached, 'days').toDate();
+        var collection = db.collection('results');
+        collection.find({'username': {$eq: username},"date" : { $gte : maxDay }}).toArray(function(err, docs) {
+            db.close();
+            if (err)
+                return cb(err);
+            if (!docs[0] || !docs[0].result)
+                return cb(null, {})
+            return cb(null, docs[0].result);
+        });
+    });
+};
+
 exports.feedback = function(input, callback) {
     var categories = input.categories;
     var keywords = input.keywords
