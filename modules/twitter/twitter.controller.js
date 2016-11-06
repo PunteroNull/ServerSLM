@@ -49,6 +49,34 @@ exports.getFollowersTweets = function(username, cb) {
     });
 }
 
+exports.buscarTweets = function(words, cb) {
+    var client = new Twitter(ConfigServer.twitterApi);
+    var that = this;
+    client.get('search/tweets', {
+        "q": words,
+        "count": 200
+    }, function(error, tweets, response) {
+        if (error || !tweets || !tweets.statuses)
+            return cb(true, null);
+
+        var slicedTweets = tweets.statuses.slice(0, 3);
+        var prepareExecution = function(tweet, cb){
+            getEmbedData(client, tweet, cb);
+        }
+        async.mapLimit(slicedTweets, 10, prepareExecution, function(err, resp){
+            if(err)
+                return cb(err);
+
+            cb(null, resp);
+        })
+    });
+};
+
+exports.buscarTwitterUsers = function(words, cb) {
+    var client = new Twitter(ConfigServer.twitterApi);
+    var that = this;
+};
+
 function sortFriends(a, b) {
     var verifiedA = 0;
     var verifiedB = 0;
@@ -57,4 +85,15 @@ function sortFriends(a, b) {
     if (b.verified)
         verifiedB = 1;
     return ((verifiedA * 0.2 * a.followers_count) + a.followers_count) - ((verifiedB * 0.2 * b.followers_count) + b.followers_count)
+}
+
+function getEmbedData(client, tweet, cb){
+    client.get('statuses/oembed', {
+        "id": tweet.id_str
+    }, function(error, tweetData, response) {
+        if(error)
+            return cb(error);
+
+        cb(null, tweetData);
+    });
 }

@@ -14,5 +14,9 @@
     "emailSended": {
         "status": 200,
         "message": "email_sended"
+    },
+    "cantGetVideos": {
+        "status": 500,
+        "message": "cant_get_videos"
     }
 }

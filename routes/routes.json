@@ -13,6 +13,20 @@
             "executeFunction": "analyze"
         }
     },
+    "/youtube": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./youtube",
+            "executeFunction": "getVideos",
+            "valid":[
+                {
+                    "name":"keyword",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
     "/twitter": {
         "method": ["GET"],
         "GET": {
@@ -49,6 +63,34 @@
             "valid":[
                 {
                     "name":"name",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
+    "/buscarTweets": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "buscarTweets",
+            "valid":[
+                {
+                    "name":"words",
+                    "type": "string",
+                    "input": "query"
+                }
+            ]
+        }
+    },
+    "/buscarTwitterUsers": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "buscarTwitterUsers",
+            "valid":[
+                {
+                    "name":"words",
                     "type": "string",
                     "input": "query"
                 }

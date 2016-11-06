@@ -47,3 +47,31 @@ exports.analyzeFollowingCached = function(req, res, next) {
         }
     })
 };
+
+exports.buscarTweets = function(req, res, next) {
+    var words = req.query.words;
+    var that = this;
+    twitterController.buscarTweets(words, function(err, resp){
+        if (err) {
+            res.sender(message.cantGetTweets);
+            return next();
+        }
+
+        res.sender(resp);
+        return next();
+    })
+};
+
+exports.buscarTwitterUsers = function(req, res, next) {
+    var words = req.query.words;
+    var that = this;
+    twitterController.buscarTwitterUsers(words, function(err, resp){
+        if (err) {
+            res.sender(message.cantGetTweets);
+            return next();
+        }
+
+        res.sender(resp);
+        return next();
+    })
+};
