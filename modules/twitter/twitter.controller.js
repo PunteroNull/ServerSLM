@@ -72,9 +72,26 @@ exports.buscarTweets = function(words, cb) {
     });
 };
 
-exports.buscarTwitterUsers = function(words, cb) {
+exports.buscarTwitterUsers = function(word, cb) {
     var client = new Twitter(ConfigServer.twitterApi);
     var that = this;
+    client.get('users/search', {"q":word, "count":4}, function(error, users, response){
+        if(error)
+            return cb(error,null);
+        var resultado = [];
+        _.each(users, function(tweet){
+            var aux = {};
+            aux.id_str = tweet.id_str;
+            aux.profile_image_url = tweet.profile_image_url;
+            aux.profile_link_color = tweet.profile_link_color;
+            aux.name = tweet.name;
+            aux.screen_name = tweet.screen_name;
+            aux.description = tweet.description;
+            aux.followers_count = tweet.followers_count;
+            resultado.push(aux);
+        });
+        cb(null,resultado);
+    });
 };
 
 function sortFriends(a, b) {

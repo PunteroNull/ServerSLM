@@ -28,7 +28,12 @@ exports.getResultByUser = function(username, cb) {
                 return cb(err);
             if (!docs[0] || !docs[0].result)
                 return cb(null, {})
-            return cb(null, docs[0].result);
+
+            var result = {
+                "code":docs[0].code,
+                "result":docs[0].result
+            }
+            return cb(null, result);
         });
     });
 };
