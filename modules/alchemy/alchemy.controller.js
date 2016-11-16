@@ -18,7 +18,7 @@ exports.analyzeText = function(username, text, cb) { //Analiza texto, luego envi
     });
 };
 
-exports.analyzeMultipleText = function(username, textUser, textsFriends, cb) { //Analiza el texto del usuario y de los usuarios que sigue, luego envia un mail con un codigo y guarda los resultados (Incompleto)
+exports.analyzeMultipleText = function(username, textUser, textsFriends, email, cb) { //Analiza el texto del usuario y de los usuarios que sigue, luego envia un mail con un codigo y guarda los resultados (Incompleto)
     var code = alchemyHelper.makeRandomCode();
     alchemyProccessText(textUser, function(err, processedUser) {
         async.mapLimit(textsFriends, 3, alchemyProccessText, function(err, processedFriends) {
@@ -26,7 +26,7 @@ exports.analyzeMultipleText = function(username, textUser, textsFriends, cb) { /
                 return console.log(err);
             } else {
                 processMultipleData(processedUser, processedFriends, function(result) {
-                    alchemyHelper.sendCode(code);
+                    alchemyHelper.sendCode(code, email);
                     alchemyHelper.saveResult(username, result, code);
                     if(result.finalResp)
                         categoryController.saveRelations(result.finalResp);

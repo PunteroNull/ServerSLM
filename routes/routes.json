@@ -67,10 +67,9 @@
                     "input": "query"
                 },
                 {
-                    "name":"mail",
+                    "name":"email",
                     "type": "string",
-                    "input": "query",
-                    "optional": true
+                    "input": "query"
                 }
             ]
         }

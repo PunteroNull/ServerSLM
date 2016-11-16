@@ -18,6 +18,7 @@ exports.analyze = function(req, res, next) {
 
 exports.analyzeFollowing = function(req, res, next) {
     var username = req.query.name;
+    var email = req.query.email;
     twitterController.getTweets(username, function(err, textUser) {
         if (err) {
             res.sender(message.cantGetTweets);
@@ -28,7 +29,7 @@ exports.analyzeFollowing = function(req, res, next) {
                 res.sender(message.cantGetTweets);
                 return next();
             }
-            alchemyController.analyzeMultipleText(username, textUser, textsFriends, function(response) {});
+            alchemyController.analyzeMultipleText(username, textUser, textsFriends, email, function(response) {});
             res.sender(message.emailSended);
             next();
         })

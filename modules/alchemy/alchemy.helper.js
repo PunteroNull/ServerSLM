@@ -67,10 +67,10 @@ exports.finalProcess = function (taxCats, keyCats, cb) {
     cb(_.sortBy(taxCats, 'score').reverse());
 }
 
-exports.sendCode = function(code) {
+exports.sendCode = function(code, email) {
     var content = {
         from: '"Mr.Tesis 👥" <malcolmtec@gmail.com>',
-        to: 'malcolmtec@gmail.com',
+        to: email ? email : 'malcolmtec@gmail.com',
         subject: 'Resultado ✔',
         text: "Tu codigo es " + code,
         html: "<b>Tu codigo es " + code + "</b>"
