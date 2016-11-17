@@ -43,7 +43,7 @@ exports.feedback = function(input, callback) {
     var keywords = input.keywords
     var note = input.note;
     MongoClient.connect(ConfigServer.mongo.url, function(err, db) {
-        var collection = db.collection('newkeywords');
+        var collection = db.collection('categories');
 
         function prepareCategories(category, cb) {
             findAndEditCategories(collection, category, keywords, note, cb)
@@ -56,46 +56,33 @@ exports.feedback = function(input, callback) {
 }
 
 function findAndEditCategories(collection, category, keywords, note, cb) {
-    collection.find({'category': {$eq: category}}).toArray(function(err, docs) {
-        if (err)
+    if(!category.cat || note < 1 || note > 5)
+        return cb("Wrong format");
+
+    collection.find({'name': {$eq: category.cat.toLowerCase()}}).toArray(function(err, docs) {
+        if (err || _.isEmpty(docs[0]))
             return cb(err);
-        if (_.isEmpty(docs[0])) {
-            var aux = {
-                "category": category,
-                "word": []
-            }
-            keywords.forEach(function(word) {
-                aux.word.push({
+
+        var wordsAux = docs[0].keywords;
+        var index;
+        keywords.forEach(function(word) {
+            index = _.findIndex(wordsAux, function(wordDB) {
+                return wordDB.name == word
+            });
+            if (index != -1) {
+                wordsAux[index].score = wordsAux[index].score + ConfigServer.values.scoreKeywords[note];
+            } else {
+                wordsAux.push({
                     "name": word,
                     "score": 1
-                })
-            })
-            collection.insert(aux, function(err, docs) {
-                if (err)
-                    return cb(err);
-                return cb(null, docs);
-            })
-        } else {
-            var wordsAux = docs[0].word;
-            var index;
-            keywords.forEach(function(word) {
-                index = _.findIndex(wordsAux, function(wordDB) {
-                    return wordDB.name == word
                 });
-                if (index != -1) {
-                    wordsAux[index].score = wordsAux[index].score + GlobalConfig.scoreKeywords[note];
-                } else {
-                    wordsAux.push({
-                        "name": word,
-                        "score": 1
-                    })
-                }
-            })
-            collection.update({_id: docs[0]["_id"]}, {$set: {word: wordsAux}}, function(err, docs) {
-                if (err)
-                    return cb(err);
-                return cb(null, docs);
-            })
-        }
+            };
+        });
+        collection.update({'_id': docs[0]["_id"]}, {$set: {'keywords': wordsAux}}, function(err, docs) {
+            if (err)
+                return cb(err);
+
+            cb(null, docs);
+        });
     });
 }

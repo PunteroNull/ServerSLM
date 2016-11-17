@@ -190,7 +190,6 @@ function searchWords(filteredWords, cb) {
     var arrayFunc = [];
     arrayWords = filteredWords;
     MongoClient.connect(ConfigServer.mongo.url, function(err, db) {
-        var collection = db.collection('newkeywords');
         dbMongo = db;
         filteredWords.forEach(function(word) {
             arrayFunc.push(findWord);
@@ -238,14 +237,8 @@ function cleanKeyword(keyword) {
 
 function findWord(cb) {
     var word = arrayWords.shift();
-    var collection = dbMongo.collection('newkeywords');
-    collection.find({
-        'word': {
-            $elemMatch: {
-                name: word
-            }
-        }
-    }).toArray(function(err, docs) {
+    var collection = dbMongo.collection('categories');
+    collection.find({'keywords': {$elemMatch: {'name': word}}}).toArray(function(err, docs) {
         if (err) {
             console.log(err);
             return cb(null, null);
@@ -254,16 +247,16 @@ function findWord(cb) {
         var foundedWord;
         docs.forEach(function(foundedDoc) {
             aux = _.findIndex(arrayFinds, {
-                "cat": foundedDoc.category
+                "cat": foundedDoc.name
             })
-            foundedWord = _.find(foundedDoc.word, function(w) {
+            foundedWord = _.find(foundedDoc.keywords, function(w) {
                 return w.name == word;
             })
             if (aux != -1) {
                 arrayFinds[aux].amount += foundedWord.score;
             } else {
                 arrayFinds.push({
-                    "cat": foundedDoc.category,
+                    "cat": foundedDoc.name,
                     "amount": foundedWord.score
                 });
             }

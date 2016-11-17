@@ -139,5 +139,24 @@
                 }
             ]
         }
+    },
+    "/similarCategories": {
+        "method": ["POST"],
+        "POST": {
+            "urlRoute": "./category",
+            "executeFunction": "similarCategories",
+            "valid":[
+                {
+                    "name":"category",
+                    "type": "string",
+                    "input": "query"
+                },
+                {
+                    "name":"categoriesFromResult",
+                    "type": "object",
+                    "input": "body"
+                }
+            ]
+        }
     }
 }
