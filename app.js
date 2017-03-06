@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
     res.sender = function(ob) {
         if (!this.sendFlag) {
             this.sendFlag = 1;
-            if (ob && ob.status)
+            if (ob && ob.status && _.isNumber(ob.status))
                 this.status(ob.status);
             this.send(ob);
         } else {

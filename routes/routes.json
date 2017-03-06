@@ -140,6 +140,15 @@
             ]
         }
     },
+    "/twitterWithFollowingCachedROS": {
+        "method": ["GET"],
+        "GET": {
+            "urlRoute": "./twitter",
+            "executeFunction": "analyzeFollowingCachedROS",
+            "valid":[
+            ]
+        }
+    },
     "/similarCategories": {
         "method": ["POST"],
         "POST": {

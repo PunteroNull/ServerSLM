@@ -7,6 +7,9 @@
         "access_token_secret": "i8moPiByClSzqIr4aNC5A9TKcSGbVH3OMoVqZn9f28Sd3"
     },
     "facebookApi": {},
+    "rosetteApi": {
+        "key": "857c04ce3253ccece97afd46b686b9c8"
+    },
     "mysql": {},
     "mongo": {
         "url":"mongodb://localhost:27017/local"
