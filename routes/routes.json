@@ -145,8 +145,16 @@
         "GET": {
             "urlRoute": "./twitter",
             "executeFunction": "analyzeFollowingCachedROS",
-            "valid":[
-            ]
+            "valid":[{
+                "name":"name",
+                "type": "string",
+                "input": "query"
+            },
+            {
+                "name":"email",
+                "type": "string",
+                "input": "query"
+            }]
         }
     },
     "/similarCategories": {

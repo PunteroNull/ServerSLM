@@ -51,40 +51,40 @@ exports.analyzeFollowingCached = function(req, res, next) {
 };
 
 exports.analyzeFollowingCachedROS = function(req, res, next) {
-    // var username = req.query.name;
+    var username = req.query.name;
     var that = this;
-    // result.getResultByUser(username, function(err, resp){
-    //     if(!err && resp && !_.isEmpty(resp)){
-    //         res.sender(resp);
-    //         return next();
-    //     } else {
+    result.getResultByUser(username, function(err, resp){
+        if(!err && resp && !_.isEmpty(resp)){
+            res.sender(resp);
+            return next();
+        } else {
             that.analyzeFollowingROS(req, res, next)
-    //     }
-    // })
+        }
+    })
 };
 
 exports.analyzeFollowingROS = function(req, res, next) {
-    // var username = req.query.name;
-    // var email = req.query.email;
-    // twitterController.getTweets(username, function(err, textUser) {
-    //     if (err) {
-    //         res.sender(message.cantGetTweets);
-    //         return next();
-    //     }
-    //     twitterController.getFollowersTweets(username, function(err, textsFriends) {
-    //         if (err) {
-    //             res.sender(message.cantGetTweets);
-    //             return next();
-    //         }
-    //         alchemyController.analyzeMultipleText(username, textUser, textsFriends, email, function(response) {});
-    //         res.sender(message.emailSended);
-    //         next();
-    //     })
-    // })
-    rosetteController.test2(function(resp){
-        res.sender(resp);
-        next();
-    });
+    var username = req.query.name;
+    var email = req.query.email;
+    twitterController.getTweets(username, function(err, textUser) {
+        if (err) {
+            res.sender(message.cantGetTweets);
+            return next();
+        }
+        twitterController.getFollowersTweets(username, function(err, textsFriends) {
+            if (err) {
+                res.sender(message.cantGetTweets);
+                return next();
+            }
+            alchemyController.analyzeMultipleTextAlt(username, textUser, textsFriends, email, function(response) {});
+            res.sender(message.emailSended);
+            next();
+        })
+    })
+    // rosetteController.test2(function(resp){
+    //     res.sender(resp);
+    //     next();
+    // });
 };
 
 exports.buscarTweets = function(req, res, next) {

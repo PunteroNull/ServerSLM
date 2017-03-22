@@ -23,7 +23,7 @@
             "5": 0.2
         },
         "minScoreTaxonomy": 0.5,
-        "minScoreKeywords": 0.5,
+        "minScoreKeywords": 0.25,
         "maxDaysCached": 7
     }
 }

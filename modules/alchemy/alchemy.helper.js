@@ -143,9 +143,9 @@ exports.finalProcessFriends = function(respTaxFriends, respKeyFriends, finalResp
             return tax.cat == userResult.cat
         });
         if (findTax)
-            findTax.score = findTax.score + userResult.score * 2;
+            findTax.score = findTax.score + userResult.score * 5;
         else {
-            userResult.score = userResult.score * 2;
+            userResult.score = userResult.score * 5;
             taxonomyComplete.push(userResult)
         }
 
@@ -174,6 +174,14 @@ exports.concatKeywordsFriends = function(keywordsUser, arrayFriends) {
             })
     })
     return _.uniq(keywords);
+}
+
+exports.transformRosToAlch = function(entities) {
+    var keywords = {"status": "OK", "language": "english", "keywords": []};
+    entities.forEach(function(entity){
+        keywords.keywords.push({"relevance": (entity.relevance / 100), "text": entity.form});
+    });
+    return keywords;
 }
 
 function sortTax(tierCollection) {
