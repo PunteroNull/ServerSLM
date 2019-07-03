@@ -1,3 +1,3 @@
 require('../global/global');
-var cluster = require('cluster');
-var app = require('../app');
+const cluster = require('cluster');
+const app = require('../app');

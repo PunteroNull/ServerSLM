@@ -1,16 +1,18 @@
-var fs = require('fs');
-var _ = require('underscore');
+const fs = require('fs');
+const _ = require('underscore');
 
 fs.readFile('./categories.csv', 'utf-8', function(err, data) {
     if (err) throw err;
-    var rows = data.split("\n");
-    var parsedJsonA = {};
-    var parsedJsonB = [];
-    var id = 1;
+
+    let rows = data.split("\n");
+    let parsedJsonA = {};
+    let parsedJsonB = [];
+    let id = 1;
+
     rows.forEach(function(row){
-        var categories = row.split(",");
+        let categories = row.split(",");
         categories = _.without(categories, "\r", "");
-        var last = null;
+        let last = null;
         categories.forEach(function(category){
             if(!parsedJsonA[category]){
                 parsedJsonA[category] = {"id":id};
@@ -21,11 +23,13 @@ fs.readFile('./categories.csv', 'utf-8', function(err, data) {
             last = category;
         })
     });
+
     fs.writeFile('parsedCategoriesTypeA.json', JSON.stringify(parsedJsonA), function(err) {
         if (err) throw err;
     });
+
     for (category in parsedJsonA) {
-        var aux = {};
+        let aux = {};
         aux.id = parsedJsonA[category].id;
         if(parsedJsonA[category].parent)
             aux.parent = parsedJsonA[category].parent;

@@ -4,4 +4,5 @@ node_modules/*.*
 .vscode/
 .directory
 config/init.json
+config/config.json
 api_key.txt

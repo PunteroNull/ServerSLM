@@ -1,15 +1,14 @@
-var express = require('express');
-var path = require('path');
-var compress = require('compression');
+const express = require('express');
+const compress = require('compression');
 
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var bodyParserJsonError = require('express-body-parser-json-error');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const bodyParserJsonError = require('express-body-parser-json-error');
 
-var validator = require('./middleware/validator');
+const validator = require('./middleware/validator');
 
-var app = express();
-var router = require('./routes');
+const app = express();
+const router = require('./routes');
 
 // Sirve para atajar errores de mandar mas de una vez el res.send
 app.use(function(req, res, next) {
@@ -29,21 +28,25 @@ app.use(function(req, res, next) {
 
 // Configuraciones de Headers y OPTIONS
 app.use(function(req, res, next) {
-    var oneof = false;
+    let oneof = false;
+    
     if (req.headers.origin) {
         res.header('Access-Control-Allow-Origin', req.headers.origin);
         oneof = true;
     }
+
     res.header("Access-Control-Allow-Headers", "X-Requested-With, Authorization, networkId, Content-Type, Accept, Origin");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
     if (oneof) {
         res.header('Access-Control-Max-Age', 60 * 60 * 24 * 365);
     }
 
-    if (req.method == 'OPTIONS')
+    if (req.method == 'OPTIONS') {
         res.status(200).send();
-    else
+    } else {
         next();
+    }
 });
 
 //Set bodyParser middleware

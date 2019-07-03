@@ -7,8 +7,9 @@ exports.getVideos = function(req, res, next) {
         if (err || !resp) {
             res.sender(message.cantGetVideos);
             return next();
+        } else {
+            res.sender(resp);
+            return next();
         }
-        res.sender(resp);
-        next();
     })
 };

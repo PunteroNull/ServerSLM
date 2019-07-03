@@ -1,21 +1,22 @@
-var express = require('express');
-var router = express.Router();
-var message = require('../common/messages.json');
+const express = require('express');
+const router = express.Router();
+const message = require('../common/messages.json');
 
-var routeModule = require('./config.js').routeModule;
-var configRoute = require('./routes.json');
+const routeModule = require('./config.js').routeModule;
+const configRoute = require('./routes.json');
 
 //Middleware para procesar los filtros de las rutas
 router.use(function(req, res, next) {
-    var url = req.originalUrl;
+    let url = req.originalUrl;
     url = url.split('?')[0];
-    if(!configRoute || !configRoute[url] || !configRoute[url][req.method])
+
+    if(!configRoute || !configRoute[url] || !configRoute[url][req.method]){
         return res.sender(message.badRequest);
+    }
 
-    var specificRoute = configRoute[url][req.method];
-
-    var urlRoute = routeModule[specificRoute.urlRoute];
-    var executeFunction = specificRoute.executeFunction;
+    let specificRoute = configRoute[url][req.method];
+    let urlRoute = routeModule[specificRoute.urlRoute];
+    let executeFunction = specificRoute.executeFunction;
 
     urlRoute[executeFunction](req, res, function() {});
 });

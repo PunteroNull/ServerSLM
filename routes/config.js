@@ -3,13 +3,13 @@ require('require-webpack-compat')(module, require);
 exports.routeModule = {};
 
 /** Busca todo los archivos .router.js de la carpeta /modules */
-var modules = require.context('../modules', true, /\.router.js$/);
+let modules = require.context('../modules', true, /\.router.js$/);
 
 /**
  * Carga todos los archivos de los modulos
  */
 modules.keys().map(function(file) {
-    var arrayPath;
+    let arrayPath;
 
     /** Si es en ubuntu el path es distinto */
     if(file.indexOf("\\") >= 0) {
@@ -20,6 +20,6 @@ modules.keys().map(function(file) {
         arrayPath = file.split("/");
     }
 
-    var lastIndex = arrayPath.length - 1;
+    let lastIndex = arrayPath.length - 1;
     exports.routeModule['./'+arrayPath[lastIndex-1]] = require('../modules/'+arrayPath[lastIndex-1]+'/'+arrayPath[lastIndex]);
 });

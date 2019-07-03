@@ -1,6 +1,6 @@
-var regularExpression = require('../common/regularExpressions');
-var configRoutes = require('../routes/routes.json');
-var message = require('../common/messages.json');
+const regularExpression = require('../common/regularExpressions');
+const configRoutes = require('../routes/routes.json');
+const message = require('../common/messages.json');
 
 /**
  * Si la ruta tiene validador, valida los valores que se mandaron en la solicitud
@@ -10,24 +10,27 @@ var message = require('../common/messages.json');
  */
 exports.valid = function(req, res, next) {
     // console.log(configRoutes);
-    var route = req.originalUrl.split("?")[0];
-    var method = req.method
+    let route = req.originalUrl.split("?")[0];
+    let method = req.method
 
-    if(!configRoutes || !configRoutes[route] || !configRoutes[route][req.method])
+    if(!configRoutes || !configRoutes[route] || !configRoutes[route][req.method]) {
         return res.sender(message.badRequest);
+    }
 
     /** Si no tiene validador */
-    if (!configRoutes[route][method].valid)
+    if (!configRoutes[route][method].valid) {
         return next();
+    }
 
-    var valid = configRoutes[route][method].valid;
-    var bodyData = req.body;
-    var queryData = req.query;
+    let valid = configRoutes[route][method].valid;
+    let bodyData = req.body;
+    let queryData = req.query;
     /** Si el input es valid, pasa al siguiente paso, si no envia un mensaje de error */
-    if (validInput(valid, bodyData, queryData))
+    if (validInput(valid, bodyData, queryData)) {
         return next();
-    else
+    } else {
         return res.sender({'status': 400, 'message': 'invalid_input'});
+    }
 };
 
 /**
@@ -37,7 +40,8 @@ exports.valid = function(req, res, next) {
  * @param {object} queryData Datos de la query de la solicitud
  */
 function validInput(valid, bodyData, queryData) {
-    var isValid = true;
+    let isValid = true;
+
     valid.forEach(function(validValue) {
         if (isValid) {
             /** Si es input query, revisa lo que este en queryData, si no el que esta en el bodyData */
@@ -70,8 +74,9 @@ function validInput(valid, bodyData, queryData) {
  * @param {object} validParams Valores expecificados en la configuracion la llamada
  */
 function validType(value, validParams) {
-    var isValid;
-    var type = validParams.type;
+    let isValid;
+    let type = validParams.type;
+
     switch (type) {
         /** Revisa que el valor sea un numero */
         case "number":
@@ -100,6 +105,7 @@ function validType(value, validParams) {
         default:
             isValid = false;
     }
+
     return isValid;
 }
 
@@ -117,12 +123,15 @@ function validTypeString(value) {
  * @param {object} validParams Valores expecificados en la configuracion la llamada
  */
 function validValueString(value, validParams) {
-    var isValid = true;
-    if (validParams.lengthMax)
-        isValid = value.length <= validParams.lengthMax ? true : false;
+    let isValid = true;
 
-    if (isValid && validParams.lengthMin)
+    if (validParams.lengthMax) {
+        isValid = value.length <= validParams.lengthMax ? true : false;
+    }
+
+    if (isValid && validParams.lengthMin) {
         isValid = value.length >= validParams.lengthMin ? true : false;
+    }
 
     return isValid;
 }
@@ -132,13 +141,15 @@ function validValueString(value, validParams) {
  * @param {*} value Valor a revisar (Puede ser de cualquier tipo)
  */
 function validTypeNumber(value) {
-    var isValid;
+    let isValid;
+
     if (_.isString(value)) {
-        var exp = regularExpression.number;
+        let exp = regularExpression.number;
         isValid = exp.test(value);
     } else {
         isValid = _.isNumber(value);
     }
+
     return isValid;
 }
 
@@ -148,13 +159,16 @@ function validTypeNumber(value) {
  * @param {object} validParams Valores expecificados en la configuracion la llamada
  */
 function validValueNumber(value, validParams) {
-    var isValid = true;
-    var valueNumber = parseFloat(value);
-    if (validParams.valueMax || validParams.valueMax == 0)
-        isValid = valueNumber <= validParams.valueMax ? true : false;
+    let isValid = true;
+    let valueNumber = parseFloat(value);
 
-    if (isValid && (validParams.valueMin || validParams.valueMin == 0))
+    if (validParams.valueMax || validParams.valueMax == 0) {
+        isValid = valueNumber <= validParams.valueMax ? true : false;
+    }
+
+    if (isValid && (validParams.valueMin || validParams.valueMin == 0)) {
         isValid = valueNumber >= validParams.valueMin ? true : false;
+    }
 
     return isValid;
 }
@@ -164,10 +178,11 @@ function validValueNumber(value, validParams) {
  * @param {*} value Valor a revisar (Puede ser de cualquier tipo)
  */
 function validTypeObject(value) {
-    var isValid;
+    let isValid;
+
     if (_.isString(value)) {
         try {
-            var aux = JSON.parse(value);
+            let aux = JSON.parse(value);
             isValid = _.isObject(aux);
         } catch (e) {
             isValid = false;
@@ -184,10 +199,11 @@ function validTypeObject(value) {
  * @param {*} value Valor a revisar (Puede ser de cualquier tipo)
  */
 function validTypeArray(value) {
-    var isValid;
+    let isValid;
+
     if (_.isString(value)) {
         try {
-            var aux = JSON.parse(value);
+            let aux = JSON.parse(value);
             isValid = _.isArray(aux);
         } catch (e) {
             isValid = false;
@@ -205,9 +221,10 @@ function validTypeArray(value) {
  * @param {object} validParams Valores expecificados en la configuracion la llamada
  */
 function validTypeCustom(value, validParams) {
-    var isValid;
+    let isValid;
+    
     if (validParams.customName && regularExpression[validParams.customName] && _.isString(value)) {
-        var exp = regularExpression[validParams.customName];
+        let exp = regularExpression[validParams.customName];
         isValid = exp.test(value);
     } else {
         isValid = false;

@@ -1,10 +1,14 @@
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 exports.emailSend = function(content, cb) {
-    var transporter = nodemailer.createTransport('smtps://malcolmtec%40gmail.com:rhderboerawmmnwa@smtp.gmail.com'); //Cambiarlo mas adelante
+    let transporter = nodemailer.createTransport('smtps://malcolmtec%40gmail.com:rhderboerawmmnwa@smtp.gmail.com');
+
     transporter.sendMail(content, function(error, info) {
-        if (error)
+        if (error) {
+            console.log("[ERROR] Hubo un problema al enviar el email");
             return cb(error);
-        cb(null, info)
+        }
+
+        return cb(null, info)
     });
 };

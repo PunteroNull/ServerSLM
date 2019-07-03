@@ -1,7 +1,11 @@
-var resultController = require('./result.controller');
+const resultController = require('./result.controller');
 
 exports.getResult = function(req, res, next) {
-    resultController.getResult(req.query.code, function(resp) {
+    resultController.getResult(req.query.code, function(err, resp) {
+        if (err) {
+            return res.status(500).send("ERROR DEL SERVIDOR");
+        } 
+
         res.sender(resp);
         next();
     });

@@ -1,60 +1,14 @@
-var twitterController = require('./twitter.controller');
-var alchemyController = require('../alchemy/alchemy.controller');
-var result = require('../result/result.controller')
-var message = require('../../common/messages.json');
-var rosetteController = require('../rosette/rosette.controller')
-
-exports.analyze = function(req, res, next) {
-    var username = req.query.name;
-    twitterController.getTweets(username, function(err, data) {
-        if (err || !data) {
-            res.sender(message.cantGetTweets);
-            return next();
-        }
-        alchemyController.analyzeText(username, data, function(response) {});
-        res.sender(message.emailSended);
-        next();
-    })
-};
-
-exports.analyzeFollowing = function(req, res, next) {
-    var username = req.query.name;
-    var email = req.query.email;
-    twitterController.getTweets(username, function(err, textUser) {
-        if (err) {
-            res.sender(message.cantGetTweets);
-            return next();
-        }
-        twitterController.getFollowersTweets(username, function(err, textsFriends) {
-            if (err) {
-                res.sender(message.cantGetTweets);
-                return next();
-            }
-            alchemyController.analyzeMultipleText(username, textUser, textsFriends, email, function(response) {});
-            res.sender(message.emailSended);
-            next();
-        })
-    })
-};
-
-exports.analyzeFollowingCached = function(req, res, next) {
-    var username = req.query.name;
-    var that = this;
-    result.getResultByUser(username, function(err, resp){
-        if(!err && resp && !_.isEmpty(resp)){
-            res.sender(resp);
-            return next();
-        } else {
-            that.analyzeFollowing(req, res, next)
-        }
-    })
-};
+const twitterController = require('./twitter.controller');
+const result = require('../result/result.controller')
+const message = require('../../common/messages.json');
+const watsonController = require('../watson/watson.controller');
 
 exports.analyzeFollowingCachedROS = function(req, res, next) {
-    var username = req.query.name;
-    var that = this;
+    let username = req.query.name;
+    let that = this;
+
     result.getResultByUser(username, function(err, resp){
-        if(!err && resp && !_.isEmpty(resp)){
+        if (!err && resp && !_.isEmpty(resp)) {
             res.sender(resp);
             return next();
         } else {
@@ -64,32 +18,32 @@ exports.analyzeFollowingCachedROS = function(req, res, next) {
 };
 
 exports.analyzeFollowingROS = function(req, res, next) {
-    var username = req.query.name;
-    var email = req.query.email;
+    let username = req.query.name;
+    let email = req.query.email;
+
     twitterController.getTweets(username, function(err, textUser) {
         if (err) {
             res.sender(message.cantGetTweets);
             return next();
         }
+
         twitterController.getFollowersTweets(username, function(err, textsFriends) {
             if (err) {
                 res.sender(message.cantGetTweets);
                 return next();
             }
-            alchemyController.analyzeMultipleTextAlt(username, textUser, textsFriends, email, function(response) {});
+
+            watsonController.analyzeMultipleTextAlt(username, textUser, textsFriends, email, function() {});
+
             res.sender(message.emailSended);
-            next();
-        })
-    })
-    // rosetteController.test2(function(resp){
-    //     res.sender(resp);
-    //     next();
-    // });
+            return next();
+        });
+    });
 };
 
 exports.buscarTweets = function(req, res, next) {
-    var words = req.query.words;
-    var that = this;
+    let words = req.query.words;
+    
     twitterController.buscarTweets(words, function(err, resp){
         if (err) {
             res.sender(message.cantGetTweets);
@@ -102,8 +56,8 @@ exports.buscarTweets = function(req, res, next) {
 };
 
 exports.buscarTwitterUsers = function(req, res, next) {
-    var words = req.query.words;
-    var that = this;
+    let words = req.query.words;
+    
     twitterController.buscarTwitterUsers(words, function(err, resp){
         if (err) {
             res.sender(message.cantGetTweets);

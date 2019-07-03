@@ -6,13 +6,6 @@
             "executeFunction": "checkStatus"
         }
     },
-    "/facebook": {
-        "method": ["GET"],
-        "GET": {
-            "urlRoute": "./facebook",
-            "executeFunction": "analyze"
-        }
-    },
     "/youtube": {
         "method": ["GET"],
         "GET": {
@@ -21,53 +14,6 @@
             "valid":[
                 {
                     "name":"keyword",
-                    "type": "string",
-                    "input": "query"
-                }
-            ]
-        }
-    },
-    "/twitter": {
-        "method": ["GET"],
-        "GET": {
-            "urlRoute": "./twitter",
-            "executeFunction": "analyze",
-            "valid":[
-                {
-                    "name":"name",
-                    "type": "string",
-                    "input": "query"
-                }
-            ]
-        }
-    },
-    "/twitterWithFollowing": {
-        "method": ["GET"],
-        "GET": {
-            "urlRoute": "./twitter",
-            "executeFunction": "analyzeFollowing",
-            "valid":[
-                {
-                    "name":"name",
-                    "type": "string",
-                    "input": "query"
-                }
-            ]
-        }
-    },
-    "/twitterWithFollowingCached": {
-        "method": ["GET"],
-        "GET": {
-            "urlRoute": "./twitter",
-            "executeFunction": "analyzeFollowingCached",
-            "valid":[
-                {
-                    "name":"name",
-                    "type": "string",
-                    "input": "query"
-                },
-                {
-                    "name":"email",
                     "type": "string",
                     "input": "query"
                 }
