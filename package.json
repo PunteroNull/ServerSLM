@@ -18,7 +18,7 @@
     "ibm-watson": "^4.1.1",
     "lodash": "^4.15.0",
     "moment": "^2.14.1",
-    "mongodb": "^2.2.7",
+    "mongodb": "^3.1.13",
     "mysql": "^2.11.1",
     "nodemailer": "^2.5.0",
     "nodemailer-smtp-transport": "^2.6.0",
